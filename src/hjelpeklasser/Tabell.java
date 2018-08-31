@@ -312,6 +312,11 @@ public class Tabell {
 
     } // nestMaks
 
+    /**
+     * Sorts array from lowest to heighest
+     * @param a Array
+     * @return Sorted array
+     */
     public static int[] sort(int[] a){
 
         if (a.length < 2) throw   // må ha minst to verdier!
@@ -327,4 +332,6 @@ public class Tabell {
 
         return a;
     }
+
+
 }
