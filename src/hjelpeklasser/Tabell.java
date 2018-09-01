@@ -363,4 +363,8 @@ public class Tabell {
         return new int[] {maksverdi,nestmaksverdi}; // størst og nest størst
 
     } // nestMaks
+
+    public static void kopier(int[] a, int i, int[] b, int j, int ant){
+        for (int n = i + ant; i < n; ) b[j++] = a[i++];
+    }
 }
