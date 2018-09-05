@@ -367,4 +367,9 @@ public class Tabell {
     public static void kopier(int[] a, int i, int[] b, int j, int ant){
         for (int n = i + ant; i < n; ) b[j++] = a[i++];
     }
+    //1.3.1
+    public static void snu(int[]a, int v){
+        snu(a,v,a.length);
+    }
+
 }

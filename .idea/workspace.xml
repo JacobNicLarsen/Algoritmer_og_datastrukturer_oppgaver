@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86eacf30-5c3c-4536-8bdf-669a501b4217" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hjelpeklasser/Tabell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hjelpeklasser/Tabell.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,18 +46,20 @@
     <session id="-474117729">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.0" value="2" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="6" />
+          <entry key="java" value="125" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6" />
+          <entry key="JAVA" value="125" />
         </counts>
       </usages-collector>
     </session>
@@ -66,7 +69,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
+            <state relative-caret-position="476">
               <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
             </state>
           </provider>
@@ -75,8 +78,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Tabell.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="367" column="8" selection-start-line="367" selection-start-column="8" selection-end-line="367" selection-end-column="8" />
+            <state relative-caret-position="741">
+              <caret line="372" column="5" lean-forward="true" selection-start-line="372" selection-start-column="5" selection-end-line="372" selection-end-column="5" />
+              <folding>
+                <element signature="e#10357#10358#0" expanded="true" />
+                <element signature="e#10378#10379#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -89,6 +96,7 @@
       <find>bytt</find>
       <find>maks</find>
       <find>while</find>
+      <find>snu</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -108,9 +116,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-12" />
-    <option name="width" value="1898" />
+    <option name="y" value="-12" />
+    <option name="width" value="1890" />
     <option name="height" value="930" />
   </component>
   <component name="ProjectView">
@@ -118,8 +127,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -143,13 +150,15 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535803928247" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535804000791" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AlgDat_Oblig1" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -202,18 +211,20 @@
       <workItem from="1535461423888" duration="259000" />
       <workItem from="1535461732764" duration="10373000" />
       <workItem from="1535716935495" duration="377000" />
-      <workItem from="1535802476763" duration="961000" />
+      <workItem from="1535802476763" duration="1264000" />
+      <workItem from="1535987170294" duration="97000" />
+      <workItem from="1536172074745" duration="1892000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11970000" />
+    <option name="totallyTimeSpent" value="14262000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-12" y="-12" width="1890" height="930" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26666668" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26545843" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -252,15 +263,19 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
+        <state relative-caret-position="476">
           <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Tabell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="367" column="8" selection-start-line="367" selection-start-column="8" selection-end-line="367" selection-end-column="8" />
+        <state relative-caret-position="741">
+          <caret line="372" column="5" lean-forward="true" selection-start-line="372" selection-start-column="5" selection-end-line="372" selection-end-column="5" />
+          <folding>
+            <element signature="e#10357#10358#0" expanded="true" />
+            <element signature="e#10378#10379#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
