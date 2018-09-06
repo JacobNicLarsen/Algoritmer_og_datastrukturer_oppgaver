@@ -257,10 +257,10 @@ public class Tabell {
      * @param v left index
      * @param h right index
      */
-    public static void snu(int[] a, int v, int h){
-
-        vhKontroll(a.length, v, h);
-        while (v < h) bytt(a,v++,h--);
+    public static void snu(int[] a, int v, int h)  // snur intervallet a[v:h]
+    {
+        vhKontroll(a.length,v,h);
+        while (v < h) bytt(a, v++, h--);
     }
 
     /**
@@ -269,11 +269,7 @@ public class Tabell {
      */
     public static void snu(int[]a){
 
-        int v = 0;
-        int h = a.length-1;
-
-        vhKontroll(a.length, v, h);
-        while (v < h)bytt(a,v++, h++);
+       snu(a,0,a.length-1);
     }
 
 
@@ -370,6 +366,91 @@ public class Tabell {
     //1.3.1
     public static void snu(int[]a, int v){
         snu(a,v,a.length);
+    }
+
+
+
+    // Array out of boundsIndexBug
+
+    public static boolean nestePermutasjon(int[] a)
+    {
+        int i = a.length - 2;                    // i starter nest bakerst
+        while (i >= 0 && a[i] > a[i + 1]) i--;   // går mot venstre
+        if (i < 0) return false;                 // a = {n, n-1, . . . , 2, 1}
+
+        int j = a.length - 1;                    // j starter bakerst
+        while (a[j] < a[i]) j--;                 // stopper når a[j] > a[i]
+        bytt(a,i,j); snu(a,i + 1);               // bytter og snur
+
+        return true;                             // en ny permutasjon
+    }
+
+
+    /**
+     * Returnerer antall invensjoner i en tabell a
+     * @param a Array
+     * @return antall invensjoner
+     */
+    public static int inversjoner(int[] a)
+    {
+        int antall = 0;  // antall inversjoner
+        for (int i = 0; i < a.length - 1; i++)
+        {
+            for (int j = i + 1; j < a.length; j++)
+            {
+                if (a[i] > a[j]) antall++;  // en inversjon siden i < j
+            }
+        }
+        return antall;
+    }
+
+
+    /**
+     * Sjekker om en tabell er sortert
+     * @param a Array
+     * @return if the array is sorted
+     */
+    public static boolean erSortert(int[] a)  // legges i samleklassen Tabell
+    {
+        for (int i = 1; i < a.length; i++)      // starter med i = 1
+            if (a[i-1] > a[i]) return false;      // en inversjon
+
+        return true;
+    }
+
+
+    /**
+     * Bobbler opp det storste tallet i en array og returnerer antall byttinger
+     * @param a Array
+     * @return Antall byttinger
+     */
+    public static int boble(int[] a)      // legges i samleklassen Tabell
+    {
+        int antall = 0;                     // antall ombyttinger i tabellen
+        for (int i = 1; i < a.length; i++)  // starter med i = 1
+        {
+            if (a[i - 1] > a[i])              // sammenligner to naboverdier
+            {
+                bytt(a, i - 1, i);              // bytter om to naboverdier
+                antall++;                       // teller opp ombyttingene
+            }
+        }
+        return antall;                      // returnerer
+    }
+
+    /**
+     * Bobblesorterer en tabell
+     * @param a Array
+     */
+    public static void boblesortering(int[] a)     // hører til klassen Tabell
+    {
+        for (int n = a.length; n > 1; n--)           // n reduseres med 1 hver gang
+        {
+            for (int i = 1; i < n; i++)                // går fra 1 til n
+            {
+                if (a[i - 1] > a[i]) bytt(a, i - 1, i);  // sammenligner/bytter
+            }
+        }
     }
 
 }
