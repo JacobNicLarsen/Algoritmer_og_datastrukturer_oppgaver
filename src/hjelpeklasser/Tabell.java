@@ -493,6 +493,31 @@ public class Tabell {
     }
 
 
+    /**
+     * Kjører linjærsøk i tabellen a
+     * @param a Array
+     * @param verdi Int
+     * @return index
+     */
+    public static int lineærsøk(int[] a, int verdi) // legges i class Tabell
+    {
+        if (a.length == 0 || verdi > a[a.length-1])
+            return -(a.length + 1);  // verdi er større enn den største
 
+        int i = 0; for(; a[i] < verdi; i++);  // siste verdi er vaktpost
+
+        return verdi == a[i] ? i : -(i + 1);   // sjekker innholdet i a[i]
+    }
+
+
+    public static int lineærsøkvenstre(int[] a, int verdi){
+
+        if(a.length == 0 || verdi > a[a.length-1])
+            return -(a.length +1 );
+
+        int i = a.length -1; for(;a[i] < verdi; i--);
+
+        return verdi == a[i] ? i : (i + 1);
+    }
 
 }
