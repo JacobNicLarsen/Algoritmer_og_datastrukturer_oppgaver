@@ -520,4 +520,13 @@ public class Tabell {
         return verdi == a[i] ? i : (i + 1);
     }
 
+    public static int lineærsøk(int[] a, int k, int verdi){
+
+        if(a.length == 0 || verdi > a[a.length - 1])
+            return -(a.length + 1);
+
+        int i = a.length - 1; for(;a[i] < verdi; i--);
+
+        return verdi == a[i] ? i : (i + k); /// Ikker ferdig
+    }
 }
