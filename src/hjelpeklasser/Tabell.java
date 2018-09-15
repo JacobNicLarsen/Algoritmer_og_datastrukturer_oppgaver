@@ -7,6 +7,8 @@ public class Tabell {
     private Tabell(){}
 
 
+
+
     /**
      * Static method to changing two parameters in an int array
      * @param a Array
@@ -242,7 +244,7 @@ public class Tabell {
     }
 
     /**
-     * test if the array is null
+     * Test if the array is null
      * @param a Array
      */
     public static void arrayControll(int a[]){
@@ -387,7 +389,7 @@ public class Tabell {
 
 
     /**
-     * Returnerer antall invensjoner i en tabell a
+     * Returnes amount of inventions
      * @param a Array
      * @return antall invensjoner
      */
@@ -406,7 +408,7 @@ public class Tabell {
 
 
     /**
-     * Sjekker om en tabell er sortert
+     * Checks if the arrays is sorted
      * @param a Array
      * @return if the array is sorted
      */
@@ -420,7 +422,7 @@ public class Tabell {
 
 
     /**
-     * Bobbler opp det storste tallet i en array og returnerer antall byttinger
+     * Bobbles up the biggest number in the array
      * @param a Array
      * @return Antall byttinger
      */
@@ -439,7 +441,7 @@ public class Tabell {
     }
 
     /**
-     * Bobblesorterer en tabell
+     * Sorts the array using bobble sort
      * @param a Array
      */
     public static void boblesortering(int[] a)     // hører til klassen Tabell
@@ -455,7 +457,7 @@ public class Tabell {
 
 
     /**
-     * Sorterer tabellen med utvalg
+     * Sorts the array using choosesorting
      * @param a Array
      */
     public static void utvalgssortering(int[] a)
@@ -464,6 +466,10 @@ public class Tabell {
             bytt(a, i, min(a, i, a.length));  // to hjelpemetoder
     }
 
+    /**
+     * Choose sorting internett
+     * @param arr Array
+     */
     public static void utvalgsortInternett(int arr[])
     {
         int n = arr.length;
@@ -485,6 +491,12 @@ public class Tabell {
         }
     }
 
+    /**
+     * Sorsr array
+     * @param a Array
+     * @param fra int from index
+     * @param til int to index
+     */
     public static void utvalgssortering(int[] a, int fra, int til){
 
         for(int i = fra; i<til; i++){
@@ -494,7 +506,7 @@ public class Tabell {
 
 
     /**
-     * Kjører linjærsøk i tabellen a
+     * Search the array for value from the right
      * @param a Array
      * @param verdi Int
      * @return index
@@ -510,7 +522,13 @@ public class Tabell {
     }
 
 
-    public static int lineærsøkvenstre(int[] a, int verdi){
+    /**
+     * Search the array from the left
+     * @param a Array
+     * @param verdi int value
+     * @return index of value
+     */
+    public static int lineærsøkMotVenstre(int[] a, int verdi){
 
         if(a.length == 0 || verdi > a[a.length-1])
             return -(a.length +1 );
@@ -520,13 +538,70 @@ public class Tabell {
         return verdi == a[i] ? i : (i + 1);
     }
 
-    public static int lineærsøk(int[] a, int k, int verdi){
+    /**
+     * Search through the array
+     * @param a Array
+     * @param verdi int
+     * @param hopp int
+     * @return index til verdi
+     */
+    public static int lineærsøk(int[]a, int verdi, int hopp){
 
-        if(a.length == 0 || verdi > a[a.length - 1])
+        if (hopp < 1) {
+            throw new IllegalArgumentException("Må ha k > 0!");
+        }
+        if (a.length == 0 || verdi > a[a.length-1]){
             return -(a.length + 1);
+        }
 
-        int i = a.length - 1; for(;a[i] < verdi; i--);
 
-        return verdi == a[i] ? i : (i + k); /// Ikker ferdig
+        int j = hopp - 1;
+        for(; j < a.length && verdi > a[j]; j += hopp);
+
+        int i = j - hopp + 1;
+        for (; i < a.length && verdi > a[i]; i++);
+
+        if(i < a.length && a[i] == verdi) return i;
+        else return -(a.length + 1);
     }
+
+    /**
+     * Binary search
+     * @param a Array
+     * @param fra index from
+     * @param til index to
+     * @param verdi value
+     * @return index of value
+     */
+    public static int binærsøk(int[] a, int fra, int til, int verdi)
+    {
+        Tabell.fratilKontroll(a.length,fra,til);
+        int v = fra, h = til - 1;
+
+        while (v < h)
+        {
+            int m = (v + h)/2;
+
+            if(verdi > a[m]) v = m + 1;
+            else h = m;
+        }
+        if(h < v || verdi < a[v]) return -(v + 1);
+        else if(verdi == a[v]) return v;
+        else return -(v + 2);
+    }
+
+    /**
+     * Binary search
+     * @param a Array
+     * @param verdi value
+     * @return index of value
+     */
+    public static int binærsøk(int[] a, int verdi){
+        return binærsøk(a,0,a.length ,verdi);
+    }
+
+
+    //sout ctrj+j
+    //ctrl + shift + up/down
+    //fori
 }
