@@ -601,6 +601,22 @@ public class Tabell {
     }
 
 
+
+    public static void innsettingssortering(int[] a, int fra, int til)
+    {
+        fratilKontroll(a.length,fra,til);  // se Programkode 1.2.3 a)
+
+        for (int i = fra + 1; i < til; i++)  // a[fra] er første verdi
+        {
+            int temp = a[i];  // flytter a[i] til en hjelpevariabel
+
+            // verdier flyttes inntil rett sortert plass i a[fra:i> er funnet
+            int j = i-1; for (; j >= fra && temp < a[j]; j--) a[j+1] = a[j];
+
+            a[j+1] = temp;  // verdien settes inn på rett sortert plass
+        }
+    }
+
     //sout ctrj+j
     //ctrl + shift + up/down
     //fori
