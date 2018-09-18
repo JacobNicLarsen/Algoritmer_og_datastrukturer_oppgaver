@@ -13,7 +13,7 @@ public class Main {
         Tabell.randPerm(a);
         //System.out.println(Arrays.toString(a));
         //System.out.println(maks(a,0,a.length - 1));
-        System.out.println(fakultet(4));
+        System.out.println(euklid(1520, 14036));
 
     }
 
@@ -38,15 +38,11 @@ public class Main {
         return z;
     }
 
-    public static int tverrsum(int n){
-
-        int sum = 0;
-
-        while (n > 0){
-            sum += n%10;
-            n /= 10;
-
-        }
+    public static int tverrsum(int n)
+    {
+        System.out.println("tverrsum(" + n + ") starter!");
+        int sum = (n < 10) ? n : tverrsum(n / 10) + (n % 10);
+        System.out.println("tverrsum(" + n + ") er ferdig!");
         return sum;
     }
 
@@ -92,4 +88,24 @@ public class Main {
 
         return n < 2 ? 1 : fakultet(n - 1) * n;
     }
+
+    public static int fib(int n)         // det n-te Fibonacci-tallet
+    {
+        if (n <= 1) return n;              // fib(0) = 0, fib(1) = 1
+        else return fib(n-1) + fib(n-2);   // summen av de to foregående
+    }
+
+    public static int euklid(int a, int b)
+    {
+        System.out.println("euklid(" + a + "," + b + ") starter!");
+        if (b == 0){
+            System.out.println("euklid(" + a + "," + b + ") er ferdig!");
+            return a;
+        }
+        int r = a % b;            // r er resten
+        int k = euklid(b,r);
+        System.out.println("euklid(" + a + "," + b + ") er ferdig!");
+        return k;  // rekursivt kall
+    }
+
 }
