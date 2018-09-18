@@ -9,9 +9,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //System.out.println(a1(0));
-        System.out.println(1234%10);
-        System.out.println(tverrsum(1234));
+        int[] a = Tabell.randPerm(100);
+        Tabell.randPerm(a);
+        System.out.println(Arrays.toString(a));
+        System.out.println(maks(a,0,a.length - 1));
 
 
     }
@@ -47,5 +48,43 @@ public class Main {
 
         }
         return sum;
+    }
+
+    public static int digitalRoot(int n){
+
+        while (n >= 10) n = tverrsum(n);
+        return n;
+    }
+
+    public static int sifferRot(int n){
+        n%=9;
+        return n == 0 ? 9 : n;
+    }
+
+    public static int kvadratRekkeSum(int n){
+        if(n == 1) return 1;
+        else return kvadratRekkeSum(n-1) + n*n;
+    }
+
+    public static int rekke_sum(int v, int h){
+        if(v==h){
+            return v;
+        }
+        int m = (v+h)/2;
+        return rekke_sum(v,m) + rekke_sum(m + 1, h);
+    }
+
+    public static int maks(int[] a, int v, int h)
+    {
+        if (v == h) return v;
+        int m = (v + h)/2;  // midten
+        int mv = maks(a,v,m);
+        int mh = maks(a,m+1,h);
+
+        return a[mv] >= a[mh] ? mv : mh;
+    }
+    public static int maks(int[] a)
+    {
+        return maks(a,0,a.length-1);
     }
 }
