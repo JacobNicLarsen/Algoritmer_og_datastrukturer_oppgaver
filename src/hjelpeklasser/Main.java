@@ -11,9 +11,9 @@ public class Main {
 
         int[] a = Tabell.randPerm(100);
         Tabell.randPerm(a);
-        System.out.println(Arrays.toString(a));
-        System.out.println(maks(a,0,a.length - 1));
-
+        //System.out.println(Arrays.toString(a));
+        //System.out.println(maks(a,0,a.length - 1));
+        System.out.println(fakultet(4));
 
     }
 
@@ -86,5 +86,10 @@ public class Main {
     public static int maks(int[] a)
     {
         return maks(a,0,a.length-1);
+    }
+
+    public static int fakultet(int n){
+
+        return n < 2 ? 1 : fakultet(n - 1) * n;
     }
 }
