@@ -108,4 +108,11 @@ public class Main {
         return k;  // rekursivt kall
     }
 
+    public static int sum(int k, int n)  // summen av tallene fra k til n
+    {
+        if (k == n) return k;              // summen av ett tall
+        int m = (k + n)/2;                 // det midterste tallet
+        return sum(k,m) + sum(m+1,n);
+    }
+    
 }
