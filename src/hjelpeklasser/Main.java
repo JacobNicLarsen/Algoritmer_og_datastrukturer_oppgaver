@@ -114,5 +114,5 @@ public class Main {
         int m = (k + n)/2;                 // det midterste tallet
         return sum(k,m) + sum(m+1,n);
     }
-    
+
 }
