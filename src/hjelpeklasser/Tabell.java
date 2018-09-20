@@ -635,23 +635,6 @@ public class Tabell {
         return m;     // returnerer posisjonen til største verdi
     }
 
-    /**
-     * Returns max string index in an array
-     * @param a Array
-     * @return int
-     */
-    public static int maks(String[] a)    // legges i class Tabell
-    {
-        int m = 0;                          // indeks til største verdi
-        String maksverdi = a[0];            // største verdi
-
-        for (int i = 1; i < a.length; i++) if (a[i].compareTo(maksverdi) > 0)
-        {
-            maksverdi = a[i];  // største verdi oppdateres
-            m = i;             // indeks til største verdi oppdaters
-        }
-        return m;  // returnerer posisjonen til største verdi
-    }
 
     /**
      * return maks index in a char array
@@ -680,6 +663,32 @@ public class Tabell {
         return m;
     }
 
+    public static <T extends Comparable<? super T>> int maks(T[] a)
+    {
+        int m = 0;                     // indeks til største verdi
+        T maksverdi = a[0];            // største verdi
+
+        for (int i = 1; i < a.length; i++) if (a[i].compareTo(maksverdi) > 0)
+        {
+            maksverdi = a[i];  // største verdi oppdateres
+            m = i;             // indeks til største verdi oppdaters
+        }
+        return m;  // returnerer posisjonen til største verdi
+    } // maks
+
+
+    public static <T extends Comparable<? super T>> void innsettingssortering(T[] a)
+    {
+        for (int i = 1; i < a.length; i++)  // starter med i = 1
+        {
+            T verdi = a[i];        // verdi er et tabellelemnet
+            int  j = i - 1;        // j er en indeks
+            // sammenligner og forskyver:
+            for (; j >= 0 && verdi.compareTo(a[j]) < 0 ; j--) a[j+1] = a[j];
+
+            a[j + 1] = verdi;      // j + 1 er rett sortert plass
+        }
+    }
     //sout ctrj+j
     //ctrl + shift + up/down
     //fori

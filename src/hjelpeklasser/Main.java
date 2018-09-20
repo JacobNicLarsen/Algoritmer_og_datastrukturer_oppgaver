@@ -11,25 +11,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        /*
-        int[] a = {5,2,7,3,9,1,8,4,6};
-        double[] d = {5.7,3.14,7.12,3.9,6.5,7.1,7.11};
-        String[] s = {"Sohil","Per","Thanh","Fatima","Kari","Jasmin"};
-        char[] c = {'a','b','c','e','d','u'};
-
-        int k = Tabell.maks(a);     // posisjonen til den største i a
-        int l = Tabell.maks(d);     // posisjonen til den største i d
-        int m = Tabell.maks(s);     // posisjonen til den største i s
-        int j = Tabell.maks(c);
-
-        System.out.println(a[k] + "  " + d[l] + "  " + s[m] + " " + c[j]);
-*/
-
-        String a = "Karianne", b = "Kari";
-
-        //System.out.println(a.compareTo(b));
-        System.out.println(Boolean.compare(true, false));
-
+        String[] s = {"Per","Kari","Ole","Anne","Ali","Eva"};
+        Tabell.innsettingssortering(s);
+        System.out.println(Arrays.toString(s));  // [Ali, Anne, Eva, Kari, Ole, Per]
     }
 
     public static int a(int n)           // n må være et ikke-negativt tall
