@@ -2,6 +2,8 @@ package hjelpeklasser;
 
 //import javafx.scene.control.Tab;
 
+
+
 import java.lang.reflect.Array;
 import java.util.Arrays;
 
@@ -9,11 +11,24 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int[] a = Tabell.randPerm(100);
-        Tabell.randPerm(a);
-        //System.out.println(Arrays.toString(a));
-        //System.out.println(maks(a,0,a.length - 1));
-        System.out.println(euklid(1520, 14036));
+        /*
+        int[] a = {5,2,7,3,9,1,8,4,6};
+        double[] d = {5.7,3.14,7.12,3.9,6.5,7.1,7.11};
+        String[] s = {"Sohil","Per","Thanh","Fatima","Kari","Jasmin"};
+        char[] c = {'a','b','c','e','d','u'};
+
+        int k = Tabell.maks(a);     // posisjonen til den største i a
+        int l = Tabell.maks(d);     // posisjonen til den største i d
+        int m = Tabell.maks(s);     // posisjonen til den største i s
+        int j = Tabell.maks(c);
+
+        System.out.println(a[k] + "  " + d[l] + "  " + s[m] + " " + c[j]);
+*/
+
+        String a = "Karianne", b = "Kari";
+
+        //System.out.println(a.compareTo(b));
+        System.out.println(Boolean.compare(true, false));
 
     }
 

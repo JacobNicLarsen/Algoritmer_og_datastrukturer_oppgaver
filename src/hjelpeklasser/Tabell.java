@@ -617,6 +617,69 @@ public class Tabell {
         }
     }
 
+    /**
+     * Returns max index of double Array
+     * @param a Array
+     * @return int
+     */
+    public static int maks(double[] a)     // legges i class Tabell
+    {
+        int m = 0;                           // indeks til største verdi
+        double maksverdi = a[0];             // største verdi
+
+        for (int i = 1; i < a.length; i++) if (a[i] > maksverdi)
+        {
+            maksverdi = a[i];     // største verdi oppdateres
+            m = i;                // indeks til største verdi oppdaters
+        }
+        return m;     // returnerer posisjonen til største verdi
+    }
+
+    /**
+     * Returns max string index in an array
+     * @param a Array
+     * @return int
+     */
+    public static int maks(String[] a)    // legges i class Tabell
+    {
+        int m = 0;                          // indeks til største verdi
+        String maksverdi = a[0];            // største verdi
+
+        for (int i = 1; i < a.length; i++) if (a[i].compareTo(maksverdi) > 0)
+        {
+            maksverdi = a[i];  // største verdi oppdateres
+            m = i;             // indeks til største verdi oppdaters
+        }
+        return m;  // returnerer posisjonen til største verdi
+    }
+
+    /**
+     * return maks index in a char array
+     * @param a Array
+     * @return int
+     */
+    public static int maks(char[] a){
+        int m = 0;
+        char maksverdi = a[0];
+
+        for (int i = 0; i < a.length; i++) if(a[i] > maksverdi) {
+            maksverdi = a[i];     // største verdi oppdateres
+            m = i;
+        }
+        return m;
+    }
+
+    public static int maks(Integer[] a){
+        int m = 0;
+        Integer maksverdi = a[0];
+
+        for (int i = 0; i < a.length; i++) if (a[i].compareTo(maksverdi) > 0){
+            maksverdi = a[i];
+            m = i;
+        }
+        return m;
+    }
+
     //sout ctrj+j
     //ctrl + shift + up/down
     //fori
