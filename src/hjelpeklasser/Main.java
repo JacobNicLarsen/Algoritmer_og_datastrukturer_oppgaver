@@ -13,8 +13,10 @@ public class Main {
 
 
 
-        System.out.println(Integer.compare(-1, 1));
-        System.out.println(Integer.compareUnsigned(-1, 1));
+        //System.out.println(Integer.compare(-1, 1));
+        //System.out.println(Integer.compareUnsigned(-1, 1));
+
+
     }
 
     public static int a(int n)           // n må være et ikke-negativt tall
@@ -123,4 +125,6 @@ public class Main {
         Tabell.innsettingssortering(a);
         Tabell.skriv(a);
     }
+
+
 }
