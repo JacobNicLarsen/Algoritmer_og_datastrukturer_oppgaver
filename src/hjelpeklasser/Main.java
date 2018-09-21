@@ -4,6 +4,9 @@ package hjelpeklasser;
 
 
 
+
+import eksempelklasser.Heltall;
+
 import java.lang.reflect.Array;
 import java.util.Arrays;
 
@@ -12,9 +15,12 @@ public class Main {
     public static void main(String[] args) {
 
 
+        int[] a = {5,2,7,3,9,1,8,10,4,6};          // en int-tabell
+        Heltall[] h = new Heltall[a.length];       // en Heltall-tabell
 
-        //System.out.println(Integer.compare(-1, 1));
-        //System.out.println(Integer.compareUnsigned(-1, 1));
+        for (int i = 0; i < h.length; i++) h[i] = new Heltall(a[i]);
+        Tabell.innsettingssortering(h);           // generisk sortering
+        System.out.println(Arrays.toString(h));   // utskrift
 
 
     }
