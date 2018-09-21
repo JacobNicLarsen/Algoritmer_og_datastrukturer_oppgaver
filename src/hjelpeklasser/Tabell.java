@@ -689,6 +689,36 @@ public class Tabell {
             a[j + 1] = verdi;      // j + 1 er rett sortert plass
         }
     }
+
+
+    public static void skriv(Object[] a, int fra, int til){
+        fratilKontroll(a.length, fra,til);
+        for (int i = fra; i < til; i++) System.out.print(a[i] + " ");
+    }
+
+    public static void skriv(Object[] a){
+        skriv(a,0,a.length);
+    }
+
+    public static void skrivln(Object[] a, int fra, int til){
+        fratilKontroll(a.length, fra,til);
+        for (int i = fra; i < til; i++) System.out.println(a[i]);
+    }
+
+    public static void skrivln(Object[] a){
+        skrivln(a,0,a.length);
+    }
+
+
+    public static void bytt(Object[] a, int i, int j){
+        Object temp = a[i];
+        a[j] = a[i];
+        a[i] = temp;
+    }
+
+
+
+
     //sout ctrj+j
     //ctrl + shift + up/down
     //fori

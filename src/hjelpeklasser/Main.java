@@ -11,9 +11,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String[] s = {"Per","Kari","Ole","Anne","Ali","Eva"};
-        Tabell.innsettingssortering(s);
-        System.out.println(Arrays.toString(s));  // [Ali, Anne, Eva, Kari, Ole, Per]
+
+
+        System.out.println(Integer.compare(-1, 1));
+        System.out.println(Integer.compareUnsigned(-1, 1));
     }
 
     public static int a(int n)           // n må være et ikke-negativt tall
@@ -114,4 +115,12 @@ public class Main {
         return sum(k,m) + sum(m+1,n);
     }
 
+    public static void sortedDouble(double[] n){
+        Double[] a = new Double[n.length];
+
+        for (int i = 0; i < n.length; i++) a[i] = n[i];
+
+        Tabell.innsettingssortering(a);
+        Tabell.skriv(a);
+    }
 }
