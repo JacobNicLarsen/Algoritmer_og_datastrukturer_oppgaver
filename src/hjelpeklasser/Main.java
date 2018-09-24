@@ -7,6 +7,7 @@ package hjelpeklasser;
 
 import eksempelklasser.Heltall;
 import eksempelklasser.Studium;
+import eksempelklasser.Måned;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -15,14 +16,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        for (Studium s : Studium.values())
+        for (Måned m : Måned.høst())
         {
-            System.out.println(s.toString() + " (" + s.name() + ")");
+            System.out.println(m.toString() + " (" + m.name() + ") " + m.getMndNr());
         }
-        // Ingeniørfag - data (Data)
-        // Informasjonsteknologi (IT)
-        // Anvendt datateknologi (Anvendt)
-        // Enkeltemnestudent (Enkeltemne)
     }
 
     public static int a(int n)           // n må være et ikke-negativt tall
