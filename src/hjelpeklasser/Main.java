@@ -8,18 +8,35 @@ package hjelpeklasser;
 import eksempelklasser.Heltall;
 import eksempelklasser.Studium;
 import eksempelklasser.Måned;
+import eksempelklasser.Person;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Optional;
+import java.util.stream.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        for (Måned m : Måned.høst())
-        {
-            System.out.println(m.toString() + " (" + m.name() + ") " + m.getMndNr());
-        }
+        Person[] p = new Person[7];                   // en persontabell
+
+        p[0] = new Person("Kari","Svendsen");         // Kari Svendsen
+        p[1] = new Person("Boris","Zukanovic");       // Boris Zukanovic
+        p[2] = new Person("Ali","Kahn");              // Ali Kahn
+        p[3] = new Person("Azra","Zukanovic");        // Azra Zukanovic
+        p[4] = new Person("Kari","Pettersen");        // Kari Pettersen
+        p[5] = new Person("Heidi","Iversen");
+        p[6] = new Person("Johan","Persen");
+
+        int m = Tabell.maks(p);                       // posisjonen til den største
+        System.out.println(p[m] + " er størst");      // skriver ut den største
+
+        Arrays.sort(p);               // generisk sortering
+        System.out.println(Arrays.toString(p));       // skriver ut sortert
+
+        Arrays.stream(p).max(Comparator.naturalOrder()).ifPresent(System.out::println);
     }
 
     public static int a(int n)           // n må være et ikke-negativt tall
