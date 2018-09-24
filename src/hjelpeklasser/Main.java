@@ -6,6 +6,7 @@ package hjelpeklasser;
 
 
 import eksempelklasser.Heltall;
+import eksempelklasser.Studium;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -14,15 +15,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-
-        int[] a = {5,2,7,3,9,1,8,10,4,6};          // en int-tabell
-        Heltall[] h = new Heltall[a.length];       // en Heltall-tabell
-
-        for (int i = 0; i < h.length; i++) h[i] = new Heltall(a[i]);
-        Tabell.innsettingssortering(h);           // generisk sortering
-        System.out.println(Arrays.toString(h));   // utskrift
-
-
+        for (Studium s : Studium.values())
+        {
+            System.out.println(s.toString() + " (" + s.name() + ")");
+        }
+        // Ingeniørfag - data (Data)
+        // Informasjonsteknologi (IT)
+        // Anvendt datateknologi (Anvendt)
+        // Enkeltemnestudent (Enkeltemne)
     }
 
     public static int a(int n)           // n må være et ikke-negativt tall
