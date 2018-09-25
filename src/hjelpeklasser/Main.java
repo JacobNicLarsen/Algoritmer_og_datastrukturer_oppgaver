@@ -5,10 +5,7 @@ package hjelpeklasser;
 
 
 
-import eksempelklasser.Heltall;
-import eksempelklasser.Studium;
-import eksempelklasser.Måned;
-import eksempelklasser.Person;
+import eksempelklasser.*;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -19,6 +16,81 @@ import java.util.stream.*;
 public class Main {
 
     public static void main(String[] args) {
+        Person[] p = new Person[5];                       // en persontabell
+        p[0] = new Person("Kari", "Svendsen");            // Kari Svendsen
+        p[1] = new Person("Boris", "Zukanovic");          // Boris Zukanovic
+        p[2] = new Person("Ali", "Kahn");                 // Ali Kahn
+        p[3] = new Person("Azra", "Zukanovic");           // Azra Zukanovic
+        p[4] = new Person("Kari", "Pettersen");           // Kari Pettersen
+
+        class FornavnKomparator implements Komparator<Person>
+        {
+            public int compare(Person p1, Person p2)        // to personer
+            {
+                return p1.fornavn().compareTo(p2.fornavn());  // sammenligner fornavn
+            }
+        }
+
+        /* 1.4.6.d
+        Komparator<Person> c = new FornavnKomparator();   // en instans av klassen
+        Tabell.innsettingssortering(p, c);                // se Programkode 1.4.6 b)
+
+        System.out.println(Arrays.toString(p));
+
+        1.4.6.e
+        Komparator<Person> c = (p1,p2) -> p1.fornavn().compareTo(p2.fornavn());
+        Tabell.innsettingssortering(p, c);                // se Programkode 1.4.6 b)
+        System.out.println(Arrays.toString(p));
+
+
+        1.4.6.f
+        String[] s = {"Lars","Anders","Bodil","Kari","Per","Berit"};
+        Tabell.innsettingssortering(s, (s1,s2) -> s1.length() - s2.length());
+
+        System.out.println(Arrays.toString(s));
+        */
+
+        Student[] s = new Student[10];                             // en studenttabell
+        s[0] = new Student("Kari","Svendsen", Studium.Data);      // Kari Svendsen
+        s[1] = new Student("Boris","Zukanovic", Studium.IT);      // Boris Zukanovic
+        s[2] = new Student("Ali","Kahn", Studium.Anvendt);        // Ali Kahn
+        s[3] = new Student("Azra","Zukanovic", Studium.IT);       // Azra Zukanovic
+        s[4] = new Student("Kari","Pettersen", Studium.Data);     // Kari Pettersen
+        s[5] = new Student("Ole","Pettersen", Studium.Elektro);     // Kari Pettersen
+        s[6] = new Student("Rolf","Larsen", Studium.IT);     // Kari Pettersen
+        s[7] = new Student("Heidi","Hansen", Studium.Elektro);     // Kari Pettersen
+        s[8] = new Student("Kunt","Oleson", Studium.Data);     // Kari Pettersen
+        s[9] = new Student("Oddvar","Heididotter", Studium.Enkeltemne);     // Kari Pettersen
+
+
+
+        Tabell.innsettingssortering(s, (s1,s2) ->
+        {
+            int cmp = s1.getStudium().compareTo(s2.getStudium());
+            return cmp != 0 ? cmp : s1.compareTo(s2);
+        });
+        for(Student t : s) System.out.print(t + ", ");
+        System.out.println();
+        Tabell.innsettingssortering(s, (s1,s2) -> s1.getStudium().compareTo(s2.getStudium()));
+        System.out.println(Arrays.toString(s));
+
+        Tabell.innsettingssortering(s, (s1, s2) ->{
+            int k = s1.getStudium().compareTo(s2.getStudium());
+            if (k != 0) return k;
+            k = s1.fornavn().compareTo(s2.fornavn());
+            if (k != 0) return k;
+            return s1.etternavn().compareTo(s2.etternavn());
+        });
+
+        System.out.print("Løsningsforslag: ");
+        for (Student t : s) System.out.print(t + ", ");
+
+
+
+
+
+
+        /*
 
         Person[] p = new Person[7];                   // en persontabell
 
@@ -37,6 +109,19 @@ public class Main {
         System.out.println(Arrays.toString(p));       // skriver ut sortert
 
         Arrays.stream(p).max(Comparator.naturalOrder()).ifPresent(System.out::println);
+
+
+        Person[] s = new Person[6];      // en Persontabell
+
+        s[0] = new Student("Kari","Svendsen",Studium.Data);    // en student
+        s[1] = new Person("Boris","Zukanovic");                // en person
+        s[2] = new Student("Ali","Kahn",Studium.Anvendt);      // en student
+        s[3] = new Person("Azra","Zukanovic");                 // en person
+        s[4] = new Student("Kari","Pettersen",Studium.Data);   // en student
+        s[5] = new Student("Vetle", "Strand", Studium.Elektro);
+
+        Tabell.innsettingssortering(s);                     // Programkode 1.4.2 e)
+        for (Person t : s) System.out.println(t);*/
     }
 
     public static int a(int n)           // n må være et ikke-negativt tall

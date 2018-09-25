@@ -1,5 +1,7 @@
 package hjelpeklasser;
 
+import eksempelklasser.Komparator;
+
 import java.util.*;
 
 public class Tabell {
@@ -717,7 +719,36 @@ public class Tabell {
     }
 
 
+    public static <T> void innsettingssortering(T[] a, Komparator<? super T> c)
+    {
+        for (int i = 1; i < a.length; i++)  // starter med i = 1
+        {
+            T verdi = a[i];        // verdi er et tabellelemnet
+            int  j = i - 1;        // j er en indeks
 
+            // sammenligner og forskyver:
+            for (; j >= 0 && c.compare(verdi,a[j]) < 0 ; j--) a[j+1] = a[j];
+
+            a[j + 1] = verdi;      // j + 1 er rett sortert plass
+        }
+    }
+
+    public static <T> int maks(T[] a, Komparator<? super T> c){
+            return maks(a,0,a.length,c);
+    }
+
+    public static <T> int maks(T[] a, int fra, int til, Komparator<? super T> c){
+        int maksIndex = 0;
+        T maks = a[fra];
+
+        for (int i = 0; i < til; i++) {
+            if(c.compare(a[i], maks) > 0){
+                maks = a[i];
+                maksIndex = i;
+            }
+        }
+        return maksIndex;
+    }
 
     //sout ctrj+j
     //ctrl + shift + up/down
