@@ -16,6 +16,15 @@ import java.util.stream.*;
 public class Main {
 
     public static void main(String[] args) {
+
+        String[] s = {"21","18","8","13","20","6","16","25","3","10"};
+        Tabell.innsettingssortering(s,(x,y) -> {
+            int k = x.length() - y.length();
+            return k != 0 ? k : x.compareTo(y);
+        });
+        for(String t : s) System.out.print(t + ", ");
+
+        /*
         Person[] p = new Person[5];                       // en persontabell
         p[0] = new Person("Kari", "Svendsen");            // Kari Svendsen
         p[1] = new Person("Boris", "Zukanovic");          // Boris Zukanovic
@@ -48,7 +57,7 @@ public class Main {
         Tabell.innsettingssortering(s, (s1,s2) -> s1.length() - s2.length());
 
         System.out.println(Arrays.toString(s));
-        */
+
 
         Student[] s = new Student[10];                             // en studenttabell
         s[0] = new Student("Kari","Svendsen", Studium.Data);      // Kari Svendsen
@@ -90,7 +99,7 @@ public class Main {
 
 
 
-        /*
+
 
         Person[] p = new Person[7];                   // en persontabell
 
@@ -122,6 +131,7 @@ public class Main {
 
         Tabell.innsettingssortering(s);                     // Programkode 1.4.2 e)
         for (Person t : s) System.out.println(t);*/
+
     }
 
     public static int a(int n)           // n må være et ikke-negativt tall
