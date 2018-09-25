@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86eacf30-5c3c-4536-8bdf-669a501b4217" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/out/hjelpeklasser/Main$1FornavnKomparator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/hjelpeklasser/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/hjelpeklasser/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/hjelpeklasser/Tabell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/hjelpeklasser/Tabell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hjelpeklasser/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hjelpeklasser/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="86eacf30-5c3c-4536-8bdf-669a501b4217" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +12,7 @@
     <session id="1193922682">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.17" value="1" />
@@ -44,12 +39,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="8586" />
+          <entry key="java" value="8641" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="8586" />
+          <entry key="JAVA" value="8641" />
         </counts>
       </usages-collector>
     </session>
@@ -88,11 +83,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+            <state relative-caret-position="119">
+              <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#6671#6672#0" expanded="true" />
@@ -115,11 +110,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Tabell.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9">
-              <caret line="738" lean-forward="true" selection-start-line="738" selection-end-line="738" />
+            <state relative-caret-position="-2">
+              <caret line="721" column="37" selection-start-line="721" selection-start-column="27" selection-end-line="721" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#19471#19472#0" expanded="true" />
@@ -190,6 +185,7 @@
       <find>maks</find>
       <find>maks(int[] a)</find>
       <find>maks(int[] a, int)</find>
+      <find>innsetting</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -262,7 +258,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537893136237" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537893287800" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Algdata_forelesning" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -333,16 +329,15 @@
       <workItem from="1537531746921" duration="1183000" />
       <workItem from="1537727324515" duration="1492000" />
       <workItem from="1537791516264" duration="2798000" />
-      <workItem from="1537795771753" duration="11909000" />
+      <workItem from="1537795771753" duration="12203000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67178000" />
+    <option name="totallyTimeSpent" value="67472000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3319838" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -353,7 +348,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32384342" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32384342" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -422,6 +417,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6671#6672#0" expanded="true" />
+            <element signature="e#6714#6715#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/eksempelklasser/Student.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -435,8 +442,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Tabell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9">
-          <caret line="738" lean-forward="true" selection-start-line="738" selection-end-line="738" />
+        <state relative-caret-position="-2">
+          <caret line="721" column="37" selection-start-line="721" selection-start-column="27" selection-end-line="721" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#19471#19472#0" expanded="true" />
@@ -445,18 +452,6 @@
             <element signature="e#19766#19767#0" expanded="true" />
             <element signature="e#20483#20484#0" expanded="true" />
             <element signature="e#20530#20531#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6671#6672#0" expanded="true" />
-            <element signature="e#6714#6715#0" expanded="true" />
           </folding>
         </state>
       </provider>
