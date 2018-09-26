@@ -43,5 +43,9 @@ public interface Komparator<T> {
                 };
         }
 
+        default Komparator<T> omvendt()
+        {
+                return (x, y) -> compare(y, x);  // bytter x og y
+        }
 
 }

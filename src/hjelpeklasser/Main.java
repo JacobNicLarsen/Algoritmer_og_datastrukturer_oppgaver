@@ -17,6 +17,14 @@ public class Main {
 
     public static void main(String[] args) {
 
+
+        String[] s = {"21","18","8","13","20","6","16","25","3","10"};
+
+        Tabell.innsettingssortering(s,Komparator.orden(String :: length).deretter((x -> x)));
+        for(String e : s) System.out.print(e + ", ");
+
+
+        /*
         Person[] p = new Person[5];                       // en persontabell
         p[0] = new Person("Kari", "Svendsen");            // Kari Svendsen
         p[1] = new Person("Boris", "Zukanovic");          // Boris Zukanovic
