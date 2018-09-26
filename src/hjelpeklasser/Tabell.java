@@ -749,7 +749,7 @@ public class Tabell {
         }
         return maksIndex;
     }
-
+    
     //sout ctrj+j
     //ctrl + shift + up/down
     //fori

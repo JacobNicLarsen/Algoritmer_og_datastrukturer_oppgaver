@@ -17,6 +17,29 @@ public class Main {
 
     public static void main(String[] args) {
 
+        Person[] p = new Person[5];                       // en persontabell
+        p[0] = new Person("Kari", "Svendsen");            // Kari Svendsen
+        p[1] = new Person("Boris", "Zukanovic");          // Boris Zukanovic
+        p[2] = new Person("Ali", "Kahn");                 // Ali Kahn
+        p[3] = new Person("Azra", "Zukanovic");           // Azra Zukanovic
+        p[4] = new Person("Kari", "Pettersen");           // Kari Pettersen
+
+
+        Tabell.innsettingssortering(p,Komparator.orden(Person::fornavn));
+        //for(Person e : p) System.out.print(e + ", ");
+
+        String[] s = {"Lars","Anders","Bodil","Kari","Per","Berit"};
+        Tabell.innsettingssortering(s, Komparator.orden(String::length));
+
+        //Omvendt orden
+        //Tabell.innsettingssortering(s,Komparator.orden(x->-x.length()));
+        //Tabell.innsettingssortering(s,(x,y) -> y.length() - x.length());
+
+        for(String e : s) System.out.print(e + ", ");
+
+
+        /*
+
         String[] s = {"21","18","8","13","20","6","16","25","3","10"};
         Tabell.innsettingssortering(s,(x,y) -> {
             int k = x.length() - y.length();
