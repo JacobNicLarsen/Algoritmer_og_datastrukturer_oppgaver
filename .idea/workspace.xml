@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86eacf30-5c3c-4536-8bdf-669a501b4217" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eksempelklasser/Komparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eksempelklasser/Komparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/hjelpeklasser/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/hjelpeklasser/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/hjelpeklasser/Tabell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/hjelpeklasser/Tabell.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hjelpeklasser/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hjelpeklasser/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hjelpeklasser/Tabell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hjelpeklasser/Tabell.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,52 +58,56 @@
     <session id="-474117729">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.open.time.9" value="2" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2505" />
+          <entry key="java" value="3102" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2505" />
+          <entry key="JAVA" value="3102" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="3" />
+          <entry key="java" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="3" />
+          <entry key="JAVA" value="4" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="493">
+              <caret line="36" column="8" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
+              <folding>
+                <element signature="e#1976#1977#0" expanded="true" />
+                <element signature="e#2019#2020#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Tabell.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="741" column="24" lean-forward="true" selection-start-line="741" selection-start-column="24" selection-end-line="741" selection-end-column="24" />
+            <state relative-caret-position="1105">
+              <caret line="755" column="26" lean-forward="true" selection-start-line="755" selection-start-column="26" selection-end-line="755" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3690#3691#0" expanded="true" />
@@ -127,7 +133,7 @@
         <entry file="file://$PROJECT_DIR$/src/eksempelklasser/Funksjon.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+              <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -135,7 +141,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/eksempelklasser/Komparator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="721">
+            <state relative-caret-position="816">
               <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
               <folding>
                 <element signature="e#1621#1622#0" expanded="true" />
@@ -148,8 +154,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/eksempelklasser/Heltall.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="47" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
+            <state relative-caret-position="459">
+              <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/eksempelklasser/Person.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="474">
+              <caret line="45" column="72" selection-start-line="45" selection-start-column="72" selection-end-line="45" selection-end-column="72" />
             </state>
           </provider>
         </entry>
@@ -167,7 +182,6 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>skriv</find>
-      <find>bytt</find>
       <find>while</find>
       <find>snu</find>
       <find>min</find>
@@ -179,6 +193,8 @@
       <find>maks(int[] a)</find>
       <find>maks(int[] a, int)</find>
       <find>innsetting</find>
+      <find>bytt</find>
+      <find>Skriv(Ob</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -187,15 +203,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/eksempelklasser/Heltall.java" />
         <option value="$PROJECT_DIR$/src/eksempelklasser/Måned.java" />
         <option value="$PROJECT_DIR$/src/eksempelklasser/Studium.java" />
-        <option value="$PROJECT_DIR$/src/eksempelklasser/Person.java" />
         <option value="$PROJECT_DIR$/src/eksempelklasser/Student.java" />
         <option value="$PROJECT_DIR$/src/eksempelklasser/Funksjon.java" />
         <option value="$PROJECT_DIR$/src/eksempelklasser/Komparator.java" />
-        <option value="$PROJECT_DIR$/src/hjelpeklasser/Main.java" />
         <option value="$PROJECT_DIR$/src/hjelpeklasser/Tabell.java" />
+        <option value="$PROJECT_DIR$/src/eksempelklasser/Heltall.java" />
+        <option value="$PROJECT_DIR$/src/eksempelklasser/Person.java" />
+        <option value="$PROJECT_DIR$/src/hjelpeklasser/Main.java" />
       </list>
     </option>
   </component>
@@ -205,17 +221,19 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-12" />
-    <option name="y" value="-12" />
-    <option name="width" value="1890" />
-    <option name="height" value="930" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="213" />
+    <option name="y" value="11" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -244,16 +262,14 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537975302329" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Algdata_forelesning" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538052264584" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Tut1" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -325,17 +341,18 @@
       <workItem from="1537791516264" duration="2798000" />
       <workItem from="1537795771753" duration="12203000" />
       <workItem from="1537958528956" duration="5026000" />
+      <workItem from="1538037676918" duration="7471000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75049000" />
+    <option name="totallyTimeSpent" value="83114000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3219616" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32569295" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -386,13 +403,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/eksempelklasser/Heltall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="47" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/eksempelklasser/Måned.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
@@ -400,23 +410,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/eksempelklasser/Person.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/eksempelklasser/Funksjon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/eksempelklasser/Komparator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="721">
+        <state relative-caret-position="816">
           <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
           <folding>
             <element signature="e#1621#1622#0" expanded="true" />
@@ -425,17 +421,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/eksempelklasser/Funksjon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="68">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/eksempelklasser/Heltall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Tabell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="741" column="24" lean-forward="true" selection-start-line="741" selection-start-column="24" selection-end-line="741" selection-end-column="24" />
+        <state relative-caret-position="1105">
+          <caret line="755" column="26" lean-forward="true" selection-start-line="755" selection-start-column="26" selection-end-line="755" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3690#3691#0" expanded="true" />
@@ -452,6 +455,24 @@
             <element signature="e#19802#19803#0" expanded="true" />
             <element signature="e#20483#20484#0" expanded="true" />
             <element signature="e#20530#20531#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/eksempelklasser/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="45" column="72" selection-start-line="45" selection-start-column="72" selection-end-line="45" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="36" column="8" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
+          <folding>
+            <element signature="e#1976#1977#0" expanded="true" />
+            <element signature="e#2019#2020#0" expanded="true" />
           </folding>
         </state>
       </provider>

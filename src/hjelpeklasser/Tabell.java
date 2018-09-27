@@ -718,6 +718,21 @@ public class Tabell {
         a[i] = temp;
     }
 
+    public static Integer[] randPermInteger(int n)
+    {
+        Integer[] a = new Integer[n];               // en Integer-tabell
+        Arrays.setAll(a, i -> i + 1);               // tallene fra 1 til n
+
+        Random r = new Random();   // hentes fra  java.util
+
+        for (int k = n - 1; k > 0; k--)
+        {
+            int i = r.nextInt(k+1);  // tilfeldig tall fra [0,k]
+            bytt(a,k,i);             // bytter om
+        }
+        return a;  // tabellen med permutasjonen returneres
+    }
+
 
     public static <T> void innsettingssortering(T[] a, Komparator<? super T> c)
     {
