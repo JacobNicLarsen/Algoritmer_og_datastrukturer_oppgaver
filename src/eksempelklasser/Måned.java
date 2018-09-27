@@ -22,7 +22,7 @@ public enum  Måned {
     private int mndNr;
     private String mndNavn;
 
-    private Måned(int mndNr, String mndNavn){
+    Måned(int mndNr, String mndNavn){
         this.mndNr = mndNr;
         this.mndNavn = mndNavn;
     }
