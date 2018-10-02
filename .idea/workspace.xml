@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86eacf30-5c3c-4536-8bdf-669a501b4217" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/eksempelklasser/Dato.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hjelpeklasser/Beholder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/hjelpeklasser/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/hjelpeklasser/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/hjelpeklasser/Tabell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/hjelpeklasser/Tabell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hjelpeklasser/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hjelpeklasser/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hjelpeklasser/Tabell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hjelpeklasser/Tabell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/eksempelklasser/Funksjon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/eksempelklasser/Heltall.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/eksempelklasser/Komparator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/eksempelklasser/Måned.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/eksempelklasser/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/eksempelklasser/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/eksempelklasser/Studium.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/hjelpeklasser/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/hjelpeklasser/Tabell.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,8 +69,8 @@
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.9" value="3" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -79,12 +85,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="4" />
+          <entry key="java" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="4" />
+          <entry key="JAVA" value="5" />
         </counts>
       </usages-collector>
     </session>
@@ -94,21 +100,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
-              <folding>
-                <element signature="e#3287#3288#0" expanded="true" />
-                <element signature="e#3330#3331#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="578">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/eksempelklasser/Dato.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/eksempelklasser/Dato.java">
+        <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Beholder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+            <state relative-caret-position="493">
+              <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -116,7 +130,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/eksempelklasser/Måned.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-176">
+            <state relative-caret-position="391">
               <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
             </state>
           </provider>
@@ -125,8 +139,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Tabell.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="904" column="38" lean-forward="true" selection-start-line="904" selection-start-column="38" selection-end-line="904" selection-end-column="38" />
+            <state relative-caret-position="12818">
+              <caret line="913" column="1" selection-start-line="913" selection-start-column="1" selection-end-line="913" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3690#3691#0" expanded="true" />
@@ -135,16 +149,6 @@
                 <element signature="e#4607#4608#0" expanded="true" />
                 <element signature="e#10332#10333#0" expanded="true" />
                 <element signature="e#10365#10366#0" expanded="true" />
-                <element signature="e#16471#16472#0" expanded="true" />
-                <element signature="e#16523#16524#0" expanded="true" />
-                <element signature="e#19507#19508#0" expanded="true" />
-                <element signature="e#19542#19543#0" expanded="true" />
-                <element signature="e#19765#19766#0" expanded="true" />
-                <element signature="e#19802#19803#0" expanded="true" />
-                <element signature="e#20992#20993#0" expanded="true" />
-                <element signature="e#21035#21036#0" expanded="true" />
-                <element signature="e#22057#22058#0" expanded="true" />
-                <element signature="e#22099#22100#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -191,8 +195,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -233,6 +237,7 @@
         <option value="$PROJECT_DIR$/src/hjelpeklasser/Tabell.java" />
         <option value="$PROJECT_DIR$/src/hjelpeklasser/Main.java" />
         <option value="$PROJECT_DIR$/src/eksempelklasser/Dato.java" />
+        <option value="$PROJECT_DIR$/src/hjelpeklasser/Beholder.java" />
       </list>
     </option>
   </component>
@@ -253,6 +258,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -281,7 +287,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
@@ -289,7 +294,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538489671902" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538499571691" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Tut1" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -366,16 +371,18 @@
       <workItem from="1538067334698" duration="2029000" />
       <workItem from="1538218033723" duration="6223000" />
       <workItem from="1538422120560" duration="14363000" />
+      <workItem from="1538496102641" duration="2415000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105729000" />
+    <option name="totallyTimeSpent" value="108144000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24453442" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24733475" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -426,17 +433,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/eksempelklasser/Heltall.java">
+    <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+        <state relative-caret-position="578">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/eksempelklasser/Person.java">
+    <entry file="file://$PROJECT_DIR$/src/eksempelklasser/Måned.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="72" selection-start-line="45" selection-start-column="72" selection-end-line="45" selection-end-column="72" />
+        <state relative-caret-position="391">
+          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Tabell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12818">
+          <caret line="913" column="1" selection-start-line="913" selection-start-column="1" selection-end-line="913" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3690#3691#0" expanded="true" />
+            <element signature="e#3732#3733#0" expanded="true" />
+            <element signature="e#4539#4540#0" expanded="true" />
+            <element signature="e#4607#4608#0" expanded="true" />
+            <element signature="e#10332#10333#0" expanded="true" />
+            <element signature="e#10365#10366#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -454,54 +477,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Tabell.java">
+    <entry file="file://$PROJECT_DIR$/src/eksempelklasser/Heltall.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="904" column="38" lean-forward="true" selection-start-line="904" selection-start-column="38" selection-end-line="904" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3690#3691#0" expanded="true" />
-            <element signature="e#3732#3733#0" expanded="true" />
-            <element signature="e#4539#4540#0" expanded="true" />
-            <element signature="e#4607#4608#0" expanded="true" />
-            <element signature="e#10332#10333#0" expanded="true" />
-            <element signature="e#10365#10366#0" expanded="true" />
-            <element signature="e#16471#16472#0" expanded="true" />
-            <element signature="e#16523#16524#0" expanded="true" />
-            <element signature="e#19507#19508#0" expanded="true" />
-            <element signature="e#19542#19543#0" expanded="true" />
-            <element signature="e#19765#19766#0" expanded="true" />
-            <element signature="e#19802#19803#0" expanded="true" />
-            <element signature="e#20992#20993#0" expanded="true" />
-            <element signature="e#21035#21036#0" expanded="true" />
-            <element signature="e#22057#22058#0" expanded="true" />
-            <element signature="e#22099#22100#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="459">
+          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/eksempelklasser/Person.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-          <folding>
-            <element signature="e#3287#3288#0" expanded="true" />
-            <element signature="e#3330#3331#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/eksempelklasser/Måned.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-176">
-          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+        <state relative-caret-position="765">
+          <caret line="45" column="72" selection-start-line="45" selection-start-column="72" selection-end-line="45" selection-end-column="72" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/eksempelklasser/Dato.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+        <state relative-caret-position="364">
+          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Beholder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
