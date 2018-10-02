@@ -6,19 +6,37 @@ package hjelpeklasser;
 
 
 import eksempelklasser.*;
+import javafx.scene.control.Tab;
 
+import javax.xml.bind.Element;
+import java.awt.*;
+import java.lang.annotation.ElementType;
 import java.lang.reflect.Array;
 import java.math.BigInteger;
+import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Optional;
+import java.util.function.Function;
 import java.util.stream.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
+        Dato[] d = new Dato[5];           // en datotabell
+        d[0] = new Dato(24,12,2014);      // 24/12-2014
+        d[1] = new Dato(24,12,2012);      // 24/12-2012
+        d[2] = new Dato(9,12,2013);       // 9/12-2013
+        d[3] = new Dato(25,12,2012);      // 25/12-2012
+        d[4] = new Dato(10,12,2013);      // 10/12-2013
+
+
+
+
     }
+
+
 
 
 
