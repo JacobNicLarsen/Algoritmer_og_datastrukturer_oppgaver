@@ -6,7 +6,6 @@ package hjelpeklasser;
 
 
 import eksempelklasser.*;
-import javafx.scene.control.Tab;
 
 import javax.xml.bind.Element;
 import java.awt.*;
