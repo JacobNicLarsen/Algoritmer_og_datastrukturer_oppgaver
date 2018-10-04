@@ -1,6 +1,11 @@
 package hjelpeklasser;
 
+import java.util.Arrays;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.Objects;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 public class TabellListe<T> implements Liste<T> {
 
@@ -70,45 +75,163 @@ public class TabellListe<T> implements Liste<T> {
 
 
 
-    @Override
+    @SuppressWarnings("unchecked")
     public void nullstill() {
+        if(antall > 10)   a = (T[])new Object[10];
+        else for (int i = 0; i < antall; i++) a[i] = null;
 
+        antall = 0;
     }
+
 
     @Override
     public Iterator<T> iterator() {
-        return null;
+        return new TabellListeIterator();
     }
 
 
     @Override
     public T oppdater(int indeks, T verdi) {
-        return null;
+        Objects.requireNonNull(verdi, "null er ulovlig");
+        indeksKontroll(indeks, false);
+
+        T gammel = a[indeks];
+        a[indeks] = verdi;
+        return gammel;
     }
 
     @Override
     public boolean fjern(T verdi) {
+        Objects.requireNonNull(verdi,"null er ulovlig");
+
+        Iterator<T> iterator = iterator();
+
+        for (int i = 0; i < antall; i++) {
+            if(a[i].equals(verdi)){
+                antall--;
+                System.arraycopy(a,i + 1, a, i, antall - i);
+
+                a[antall] = null;
+                return true;
+            }
+        }
+
         return false;
     }
 
     @Override
     public T fjern(int indeks) {
-        return null;
+        indeksKontroll(indeks, false);
+        T verdi = a[indeks];
+
+        antall--;
+        System.arraycopy(a,indeks + 1, a, indeks, antall - indeks);
+        a[antall] = null;
+
+        return verdi;
+    }
+
+
+    public boolean inneholder(T verdi){
+        return indeksTil(verdi) != -1;
     }
 
 
     @Override
     public boolean leggInn(T verdi) {
-        return false;
+        Objects.requireNonNull(verdi, "null er ulovlig");
+
+        if(antall == a.length){
+            utvid();
+        }
+
+        a[antall++] = verdi;
+        return true;
     }
 
     @Override
     public void leggInn(int indeks, T verdi) {
+        Objects.requireNonNull(verdi,"null er ulovlig");
 
+        if(antall == a.length) utvid();
+
+        System.arraycopy(a,indeks,a,indeks + 1, antall - indeks);
+
+        a[indeks] = verdi;
+        antall ++;
     }
 
-    public boolean inneholder(T verdi){
-        return indeksTil(verdi) != -1;
+    private void utvid(){
+        a = Arrays.copyOf(a,(3*antall/2 + 1));
+    }
+
+    public boolean fjernHvis(Predicate<? super T> p){
+
+        Objects.requireNonNull(p);
+        int nyttAntall = antall;
+
+        for (int i = 0, j = 0; j < antall; j++){
+            if(p.test(a[j])) nyttAntall--;
+            else a[i++] = a[j];
+        }
+
+        for(int i = nyttAntall; i<antall; i++)a[i] = null;
+
+        boolean fjernet = nyttAntall < antall;
+
+        antall = nyttAntall;
+        return fjernet;
+    }
+
+    public void forEach(Consumer<? super T> action){
+        for (int i = 0; i < antall; i++) {
+            action.accept(a[i]);
+        }
+    }
+
+
+
+
+
+    private class TabellListeIterator implements Iterator<T>{
+        private int denne = 0;
+
+        private boolean fjernOK = false;
+
+        @Override
+        public boolean hasNext() {
+            return denne < antall;
+        }
+
+        @Override
+        public T next() {
+            if(!hasNext())
+                throw new NoSuchElementException("Tomt eller ingen verdier igjen!");
+
+            T denneVerdi = a[denne];
+            denne++;
+            fjernOK = true;
+            return denneVerdi;
+        }
+
+        public void remove(){
+            if(!fjernOK) throw new IllegalStateException("Ulovelig tilstand");
+
+            fjernOK = false;
+
+            antall--;
+            denne--;
+
+            System.arraycopy(a,denne + 1, a, denne, antall - denne);
+            a[antall] = null;
+        }
+
+        @Override
+        public void forEachRemaining(Consumer<? super T> action){
+            while (denne < antall){
+                action.accept(a[denne++]);
+            }
+        }
     }
 
 
