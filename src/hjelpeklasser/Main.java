@@ -23,14 +23,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Dato[] d = new Dato[5];           // en datotabell
-        d[0] = new Dato(24,12,2014);      // 24/12-2014
-        d[1] = new Dato(24,12,2012);      // 24/12-2012
-        d[2] = new Dato(9,12,2013);       // 9/12-2013
-        d[3] = new Dato(25,12,2012);      // 25/12-2012
-        d[4] = new Dato(10,12,2013);      // 10/12-2013
 
+        String[] s = {"Sohil",null,"Per","Thanh","Ann","Kari","Jon",null};
+        Liste<String> liste = new TabellListe<>(s);
 
+        System.out.println(liste);
 
 
     }
