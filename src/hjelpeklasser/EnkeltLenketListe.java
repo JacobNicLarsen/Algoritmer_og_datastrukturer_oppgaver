@@ -89,32 +89,86 @@ public class EnkeltLenketListe<T> implements Liste<T> {
 
     @Override
     public boolean inneholder(T t) {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        return (indeksTil(t) != -1);
     }
 
     @Override
     public T hent(int indeks) {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        indeksKontroll(indeks,false);
+        return finnNode(indeks).verdi;
     }
 
     @Override
     public int indeksTil(T t) {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+
+        if(t == null) return -1;
+
+        Node<T> p = hode;
+        for (int i = 0; i < antall; i++) {
+            if(p.verdi.equals(t)) return i;
+            p = p.neste;
+        }
+        return -1;
     }
 
     @Override
     public T oppdater(int indeks, T t) {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        Objects.requireNonNull(t);
+        indeksKontroll(indeks, false);
+
+        Node<T> p = finnNode(indeks);
+        T gammelVerdi = p.verdi;
+        p.verdi = t;
+
+        return gammelVerdi;
     }
 
     @Override
     public T fjern(int indeks) {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        indeksKontroll(indeks, false);
+
+        T temp;
+
+        if(indeks == 0) {
+            temp = hode.verdi;
+            hode = hode.neste;
+            if(antall == 1) hale = null;
+        }
+        else{
+            Node<T> p = finnNode(indeks -1);
+            Node<T> q = p.neste;
+            temp = q.verdi;
+
+            if(q == hale) hale = p;
+            p.neste = q.neste;
+        }
+        antall--;
+        return temp;
     }
 
     @Override
     public boolean fjern(T t) {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        if(t == null) return false;
+
+        Node<T> q = hode, p = null;
+
+        while (q !=null){
+            if(q.verdi.equals(t)) break;
+            p = q; q = q.neste;
+        }
+
+        if(q == null) return false;
+        else if(q == hode) hode = hode.neste;
+        else p.neste = q.neste;
+
+        if(q == hale) hale = p;
+
+        q.verdi = null;
+        q.neste = null;
+
+        antall--;
+
+        return true;
     }
 
     @Override
@@ -173,5 +227,12 @@ public class EnkeltLenketListe<T> implements Liste<T> {
         s.append(']');
 
         return s.toString();
+    }
+
+    private Node<T> finnNode(int indeks)
+    {
+        Node<T> p = hode;
+        for (int i = 0; i < indeks; i++) p = p.neste;
+        return p;
     }
 }
