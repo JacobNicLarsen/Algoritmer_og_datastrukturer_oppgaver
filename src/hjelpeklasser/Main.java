@@ -15,6 +15,7 @@ import java.math.BigInteger;
 import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.*;
@@ -24,26 +25,24 @@ public class Main {
     public static void main(String[] args) {
 
 
-        String[] s = {"Jens","Per","Kari","Ole","Berit","Jens","Anne","Nils","Siv"};
+        Liste<Integer> liste = new EnkeltLenketListe<>();
 
-        Liste<String> liste = new TabellListe<>();
+        System.out.println("Antall i listen: " + liste.antall());
+        System.out.println("Listen inneholder: " + liste);
 
-        for (String navn : s) liste.leggInn(0,navn);  // legger inn først
+        for (int i = 0; i < 10; i++) liste.leggInn(i + 1);
 
+        System.out.println("Antall i listen: " + liste.antall());
+        System.out.println("Listen inneholder: " + liste);
 
-        System.out.println("Vi henter " + liste.hent(5) + ".");
+        liste.nullstill();
+        System.out.println("Antall i listen: " + liste.antall());
 
-        System.out.println("Nils er på plass " + liste.indeksTil("Nils") + "!");
+        for (int i = 0; i < 10; i++) liste.leggInn(liste.antall()/2, i + 1);
 
-        liste.oppdater(2,"Anna");  // bytter ut Anne med Anna på plass 2
+        System.out.println("Antall i listen: " + liste.antall());
+        System.out.println("Listen inneholder: " + liste);
 
-        System.out.println(liste.fjern(0) + " er slettet!");
-
-        System.out.println("Listeinnhold: " + liste);
-
-        liste.fjernHvis(x -> x.equals("Jens"));  // fjerner alle forekomster av Jens
-
-        liste.forEach(x -> System.out.print(x + " "));
     }
 
 

@@ -1,9 +1,6 @@
 package hjelpeklasser;
 
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-import java.util.Objects;
+import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
@@ -11,6 +8,7 @@ public class TabellListe<T> implements Liste<T> {
 
     private T[]a;
     private int antall;
+    private int endringer;
 
     @SuppressWarnings("unchecked")          // pga. konverteringen: Object[] -> T[]
     public TabellListe(int størrelse)       // konstruktør
@@ -81,6 +79,7 @@ public class TabellListe<T> implements Liste<T> {
         else for (int i = 0; i < antall; i++) a[i] = null;
 
         antall = 0;
+        endringer++;
     }
 
 
@@ -97,6 +96,9 @@ public class TabellListe<T> implements Liste<T> {
 
         T gammel = a[indeks];
         a[indeks] = verdi;
+
+        endringer++;
+
         return gammel;
     }
 
@@ -112,6 +114,8 @@ public class TabellListe<T> implements Liste<T> {
                 System.arraycopy(a,i + 1, a, i, antall - i);
 
                 a[antall] = null;
+
+                endringer++;
                 return true;
             }
         }
@@ -146,6 +150,7 @@ public class TabellListe<T> implements Liste<T> {
         }
 
         a[antall++] = verdi;
+        endringer ++;
         return true;
     }
 
@@ -159,6 +164,8 @@ public class TabellListe<T> implements Liste<T> {
 
         a[indeks] = verdi;
         antall ++;
+
+        endringer ++;
     }
 
     private void utvid(){
@@ -195,8 +202,8 @@ public class TabellListe<T> implements Liste<T> {
 
     private class TabellListeIterator implements Iterator<T>{
         private int denne = 0;
-
         private boolean fjernOK = false;
+        private int iteratorendringer = endringer;
 
         @Override
         public boolean hasNext() {
@@ -205,6 +212,10 @@ public class TabellListe<T> implements Liste<T> {
 
         @Override
         public T next() {
+
+            if(iteratorendringer != endringer)
+                throw new ConcurrentModificationException("listen er endret!");
+
             if(!hasNext())
                 throw new NoSuchElementException("Tomt eller ingen verdier igjen!");
 
@@ -215,6 +226,9 @@ public class TabellListe<T> implements Liste<T> {
         }
 
         public void remove(){
+            if(iteratorendringer != endringer)
+                throw new ConcurrentModificationException("listen er endret!");
+
             if(!fjernOK) throw new IllegalStateException("Ulovelig tilstand");
 
             fjernOK = false;
@@ -223,7 +237,11 @@ public class TabellListe<T> implements Liste<T> {
             denne--;
 
             System.arraycopy(a,denne + 1, a, denne, antall - denne);
+
             a[antall] = null;
+
+            endringer++;
+            iteratorendringer++;
         }
 
         @Override
