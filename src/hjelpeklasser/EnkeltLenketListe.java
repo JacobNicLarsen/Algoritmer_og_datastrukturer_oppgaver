@@ -154,7 +154,8 @@ public class EnkeltLenketListe<T> implements Liste<T> {
 
         while (q !=null){
             if(q.verdi.equals(t)) break;
-            p = q; q = q.neste;
+            p = q;
+            q = q.neste;
         }
 
         if(q == null) return false;
