@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86eacf30-5c3c-4536-8bdf-669a501b4217" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/hjelpeklasser/Stakk.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hjelpeklasser/TabellStakk.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/hjelpeklasser/EnkeltLenketListe$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/hjelpeklasser/EnkeltLenketListe$Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/hjelpeklasser/EnkeltLenketListe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/hjelpeklasser/EnkeltLenketListe.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/hjelpeklasser/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/hjelpeklasser/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hjelpeklasser/EnkeltLenketListe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hjelpeklasser/EnkeltLenketListe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/hjelpeklasser/TabellStakk.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/hjelpeklasser/TabellStakk.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hjelpeklasser/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hjelpeklasser/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hjelpeklasser/TabellStakk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hjelpeklasser/TabellStakk.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,12 +73,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="8974" />
+          <entry key="java" value="11482" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="8974" />
+          <entry key="JAVA" value="11482" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -98,33 +95,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="408">
+              <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#562#571#0" expanded="true" />
+                <element signature="e#607#616#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/TabellStakk.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="208">
+              <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
               <folding>
                 <element signature="e#322#352#0" expanded="true" />
-                <element signature="e#790#791#0" expanded="true" />
-                <element signature="e#817#818#0" expanded="true" />
-                <element signature="e#854#855#0" expanded="true" />
-                <element signature="e#881#882#0" expanded="true" />
                 <element signature="e#922#923#0" expanded="true" />
                 <element signature="e#946#947#0" expanded="true" />
-                <element signature="e#988#989#0" expanded="true" />
-                <element signature="e#1016#1017#0" expanded="true" />
+                <element signature="e#980#981#0" expanded="true" />
+                <element signature="e#1011#1012#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -151,8 +146,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/eksempelklasser/Komparator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+            <state relative-caret-position="68">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -272,7 +270,6 @@
         <option value="$PROJECT_DIR$/src/eksempelklasser/Heltall.java" />
         <option value="$PROJECT_DIR$/src/eksempelklasser/Person.java" />
         <option value="$PROJECT_DIR$/src/eksempelklasser/Måned.java" />
-        <option value="$PROJECT_DIR$/src/eksempelklasser/Komparator.java" />
         <option value="$PROJECT_DIR$/src/hjelpeklasser/Tabell.java" />
         <option value="$PROJECT_DIR$/src/eksempelklasser/Dato.java" />
         <option value="$PROJECT_DIR$/src/hjelpeklasser/Beholder.java" />
@@ -283,6 +280,7 @@
         <option value="$PROJECT_DIR$/src/hjelpeklasser/TabellListe.java" />
         <option value="$PROJECT_DIR$/src/hjelpeklasser/EnkeltLenketListe.java" />
         <option value="$PROJECT_DIR$/src/hjelpeklasser/Stakk.java" />
+        <option value="$PROJECT_DIR$/src/eksempelklasser/Komparator.java" />
         <option value="$PROJECT_DIR$/src/hjelpeklasser/Main.java" />
         <option value="$PROJECT_DIR$/src/hjelpeklasser/TabellStakk.java" />
       </list>
@@ -341,7 +339,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539619920818" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539643118852" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../AlgDat_Oblig2" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -433,18 +431,18 @@
       <workItem from="1539258435955" duration="1642000" />
       <workItem from="1539355013204" duration="599000" />
       <workItem from="1539434972497" duration="1059000" />
-      <workItem from="1539614941244" duration="3018000" />
+      <workItem from="1539614941244" duration="10581000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160228000" />
+    <option name="totallyTimeSpent" value="167791000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.271855" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27132195" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -580,20 +578,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/AbstraktBeholder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="32" column="55" selection-start-line="32" selection-start-column="55" selection-end-line="32" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/eksempelklasser/Komparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Beholder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
@@ -621,10 +605,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/AbstraktBeholder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="340">
+          <caret line="32" column="55" selection-start-line="32" selection-start-column="55" selection-end-line="32" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/eksempelklasser/Komparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -633,18 +624,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/TabellStakk.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="208">
+          <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
           <folding>
             <element signature="e#322#352#0" expanded="true" />
-            <element signature="e#790#791#0" expanded="true" />
-            <element signature="e#817#818#0" expanded="true" />
-            <element signature="e#854#855#0" expanded="true" />
-            <element signature="e#881#882#0" expanded="true" />
             <element signature="e#922#923#0" expanded="true" />
             <element signature="e#946#947#0" expanded="true" />
-            <element signature="e#988#989#0" expanded="true" />
-            <element signature="e#1016#1017#0" expanded="true" />
+            <element signature="e#980#981#0" expanded="true" />
+            <element signature="e#1011#1012#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#562#571#0" expanded="true" />
+            <element signature="e#607#616#0" expanded="true" />
           </folding>
         </state>
       </provider>

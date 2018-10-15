@@ -20,12 +20,27 @@ import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.*;
 
+
 public class Main {
 
     public static void main(String[] args) {
 
+        Stakk<Integer> a = new TabellStakk<Integer>(10);
+        Stakk<Integer> b = new TabellStakk<Integer>(10);
 
+        for (int i = 0; i < 10000; i++) {
+            a.leggInn((int) (i + Math.random() * 10));
+        }
 
+        System.out.println("Startet å sortere");
+        Long startTime = System.currentTimeMillis();
+        TabellStakk.sorter(a,Comparator.naturalOrder());
+        Long endTime = System.currentTimeMillis();
+
+        long Duration = (endTime - startTime);
+
+        //System.out.println("Dette er tabell A: " + a.toString());
+        System.out.println("Det tok " + Duration);
     }
 
 
@@ -140,6 +155,8 @@ public class Main {
         Tabell.innsettingssortering(a);
         Tabell.skriv(a);
     }
+
+
 
 
 }
