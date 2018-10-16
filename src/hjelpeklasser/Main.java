@@ -25,22 +25,19 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Stakk<Integer> a = new TabellStakk<Integer>(10);
-        Stakk<Integer> b = new TabellStakk<Integer>(10);
+        Stakk<Integer> c = new TabellStakk<>(20);
 
-        for (int i = 0; i < 10000; i++) {
-            a.leggInn((int) (i + Math.random() * 10));
-        }
+        c.leggInn(4);
+        c.leggInn(3);
+        c.leggInn(2);
+        c.leggInn(1);
 
-        System.out.println("Startet å sortere");
-        Long startTime = System.currentTimeMillis();
-        TabellStakk.sorter(a,Comparator.naturalOrder());
-        Long endTime = System.currentTimeMillis();
 
-        long Duration = (endTime - startTime);
 
-        //System.out.println("Dette er tabell A: " + a.toString());
-        System.out.println("Det tok " + Duration);
+        System.out.println(c.toString());
+        TabellKø.snu(c);
+        System.out.println(c.toString());
+
     }
 
 

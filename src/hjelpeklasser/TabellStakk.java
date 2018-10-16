@@ -181,6 +181,30 @@ public class TabellStakk<T> implements Stakk<T>
         while (!B.tom()) A.leggInn(B.taUt());
     }
 
+    public static void sjekkParenteser(String tekst, char v, char h)
+    {
+        Stakk<Character> stakk = new TabellStakk<Character>();
+
+        for (int i = 0; i < tekst.length(); i++)
+        {
+            if (tekst.charAt(i) == v) stakk.leggInn(v); // venstre-parentes
+            else if (tekst.charAt(i) == h)  // høyre-parentes
+            {
+                if (stakk.tom())
+                {
+                    System.out.println("Det mangler en venstre-parentes");
+                    return;
+                }
+                stakk.taUt();
+            }
+        }
+
+        if (!stakk.tom())
+            System.out.println("Det mangler en høyre-parentes");
+    }
+
+
+
 
 
 }  // class TabellStakk
