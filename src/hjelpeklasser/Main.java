@@ -25,17 +25,17 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Stakk<Integer> c = new TabellStakk<>(20);
+        Kø<Integer> c = new TabellKø<>();
 
-        c.leggInn(4);
-        c.leggInn(3);
-        c.leggInn(2);
         c.leggInn(1);
+        c.leggInn(2);
+        c.leggInn(3);
+        c.leggInn(4);
 
 
 
         System.out.println(c.toString());
-        TabellKø.snu(c);
+        TabellKø.snuOneQuqVar(c);
         System.out.println(c.toString());
 
     }

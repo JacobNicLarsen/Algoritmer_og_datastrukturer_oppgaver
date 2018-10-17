@@ -130,4 +130,29 @@ public class TabellKø<T> implements Kø<T>
         while (!A.tom()) B.leggInn(A.taUt());
         while (!B.tom()) A.leggInn(B.taUt());
     }
+
+    public static <T> void snuToQue(Kø<T> A){
+        Kø<T> B = new TabellKø<>();
+        Kø<T> C = new TabellKø<>();
+
+        while (!A.tom()){
+            while (!B.tom()) C.leggInn(B.taUt());
+            B.leggInn(A.taUt());
+            while (!C.tom()) B.leggInn(C.taUt());
+        }
+        while (!B.tom()) A.leggInn(B.taUt());
+    }
+
+    public static <T> void snuOneQuqVar(Kø<T> A){
+        Kø<T> B = new TabellKø<T>();
+        int n = A.antall() - 1;
+
+        while (n >=0){
+            for (int i = 0; i < n; i++) A.leggInn(A.taUt());
+            B.leggInn(A.taUt());
+            n--;
+        }
+
+        while (!B.tom()) A.leggInn(B.taUt());
+    }
 } // class TabellKø
