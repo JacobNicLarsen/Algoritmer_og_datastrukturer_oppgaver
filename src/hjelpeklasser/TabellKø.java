@@ -1,5 +1,7 @@
 package hjelpeklasser;
 
+import eksempelklasser.Komparator;
+
 import java.util.NoSuchElementException;
 
 public class TabellKø<T> implements Kø<T>
@@ -151,6 +153,29 @@ public class TabellKø<T> implements Kø<T>
             for (int i = 0; i < n; i++) A.leggInn(A.taUt());
             B.leggInn(A.taUt());
             n--;
+        }
+
+        while (!B.tom()) A.leggInn(B.taUt());
+    }
+
+    public static <T> void sorter(Kø<T> A, Komparator<? super T> c){
+        if (A.antall() <= 1) return;
+
+        Kø<T> B = new TabellKø<T>();
+        Kø<T> C = new TabellKø<T>();
+
+        B.leggInn(A.taUt());
+
+        while (!A.tom())
+        {
+            T averdi = A.taUt();
+            while (!B.tom() && c.compare(B.kikk(),averdi) < 0)
+                C.leggInn(B.taUt());
+
+            C.leggInn(averdi);
+
+            while (!B.tom()) C.leggInn(B.taUt());
+            Kø<T> D = B; B = C; C = D;
         }
 
         while (!B.tom()) A.leggInn(B.taUt());

@@ -1,8 +1,9 @@
 package hjelpeklasser;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 import java.util.Objects;
 
-public class EnkeltLenketListe<T> implements Liste<T> {
+public class EnkeltLenketListe<T> implements Liste<T>, Kø<T> {
 
 
     private static final class Node<T>       // en indre nodeklasse
@@ -61,6 +62,18 @@ public class EnkeltLenketListe<T> implements Liste<T> {
 
         antall++;        // en mer i listen
         return true;     // vellykket innlegging
+    }
+
+    @Override
+    public T kikk() {
+        if (tom()) throw new NoSuchElementException("Køen er tom!");
+        return hent(0);    // henter den første
+    }
+
+    @Override
+    public T taUt() {
+        if (tom()) throw new NoSuchElementException("Køen er tom!");
+        return fjern(0);   // returnerer (og fjerner) den første
     }
 
     @Override
