@@ -25,18 +25,19 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Integer[] a = Tabell.randPermInteger(10);
 
-        Kø<Integer> kø = new EnkeltLenketListe<>();
-        for (Integer i : a) kø.leggInn(i);
+        int[] posisjon = new int[15];
+        int j = 0;
+        for (int i = 0; i < 15; i++) {
+            posisjon[i] = (int)Math.pow(2,i);
+            j++;
+        }
 
-        System.out.println(kø);    // usortert
+        String[] verdi = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15".split("");
 
-        Stakk<Integer> stakk = new TabellStakk<>();
+        BinTre<String> tre = new BinTre<>(posisjon, verdi);  // den nye konstruktøren
 
-        sorter(kø, stakk, Comparator.naturalOrder());
 
-        System.out.println(kø);    // sortert
 
     }
 
