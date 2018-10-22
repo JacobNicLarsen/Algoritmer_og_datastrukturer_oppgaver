@@ -1,6 +1,7 @@
 package hjelpeklasser;
 
 import java.util.Arrays;
+import java.util.function.Consumer;
 
 public class BinTre<T>           // et generisk binærtre
 {
