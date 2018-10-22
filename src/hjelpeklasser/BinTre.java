@@ -1,5 +1,7 @@
 package hjelpeklasser;
 
+import java.util.Arrays;
+
 public class BinTre<T>           // et generisk binærtre
 {
     private static final class Node<T>  // en indre nodeklasse
@@ -105,5 +107,95 @@ public class BinTre<T>           // et generisk binærtre
 
         return gammelverdi;
     }
+
+    public int nodeType(int posisjon){
+
+        if (posisjon < 1)
+            throw new IllegalArgumentException("Posisjonen må være større enn 0");
+
+        Node<T> p = finnNode(posisjon);
+
+        if (p == null) return  -1;
+        else if (p.venstre != null && p.høyre != null) return 0; // Noden er en indre node
+        else return 1; //Noden er en bladnode
+    }
+
+    public T fjern(int posisjon){
+        if (posisjon < 1) throw new
+                IllegalArgumentException("Posisjon(" + posisjon + ") < 1!");
+
+        Node<T> p = rot, q = null;               // hjelpepekere
+        int filter = Integer.highestOneBit(posisjon >> 1);   // binært siffer
+
+        while (p != null && filter > 0)
+        {
+            q = p;
+            p = (filter & posisjon) == 0 ? p.venstre : p.høyre;
+            filter >>= 1;
+        }
+
+        if (p == null) throw new
+                IllegalArgumentException("Posisjon(" + posisjon + ") er utenfor treet!");
+
+        if (p.venstre != null || p.høyre != null) throw new
+                IllegalArgumentException("Posisjon(" + posisjon + ") er ingen bladnode!");
+
+        if (p == rot) rot = null;
+        else if (p == q.venstre) q.venstre = null;
+        else q.høyre = null;
+
+        antall--;  //
+        return p.verdi;
+    }
+
+    public void nivåorden(Oppgave<? super T> oppgave)                // skal ligge i class BinTre
+    {
+        if (tom()) return;                   // tomt tre
+
+        Kø<Node<T>> kø = new TabellKø<>();   // Se Avsnitt 4.2.2
+        kø.leggInn(rot);                     // legger inn roten
+
+        while (!kø.tom())                    // så lenge som køen ikke er tom
+        {
+            Node<T> p = kø.taUt();             // tar ut fra køen
+            oppgave.utførOppgave(p.verdi);
+
+            if (p.venstre != null) kø.leggInn(p.venstre);
+            if (p.høyre != null) kø.leggInn(p.høyre);
+
+        }
+    }
+
+    public int[] nivåer()   // returnerer en tabell som inneholder nivåantallene
+    {
+        if (tom()) return new int[0];       // en tom tabell for et tomt tre
+
+        int[] a = new int[8];               // hjelpetabell
+        Kø<Node<T>> kø = new TabellKø<>();  // hjelpekø
+        int nivå = 0;                       // hjelpevariabel
+
+        kø.leggInn(rot);    // legger roten i køen
+
+        while (!kø.tom())   // så lenge som køen ikke er tom
+        {
+            // utvider a hvis det er nødvendig
+            if (nivå == a.length) a = Arrays.copyOf(a,2*nivå);
+
+            int k = a[nivå] = kø.antall();  // antallet på dette nivået
+
+            for (int i = 0; i < k; i++)  // alle på nivået
+            {
+                Node<T> p = kø.taUt();
+
+                if (p.venstre != null) kø.leggInn(p.venstre);
+                if (p.høyre != null) kø.leggInn(p.høyre);
+            }
+
+            nivå++;  // fortsetter på neste nivå
+        }
+
+        return Arrays.copyOf(a, nivå);  // fjerner det overflødige
+    }
+
 
 } // class BinTre<T>

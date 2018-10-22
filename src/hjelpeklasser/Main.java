@@ -25,21 +25,23 @@ public class Main {
 
     public static void main(String[] args) {
 
+        
 
-        int[] posisjon = new int[15];
-        int j = 0;
-        for (int i = 0; i < 15; i++) {
-            posisjon[i] = (int)Math.pow(2,i);
-            j++;
-        }
+        int[] posisjon = {1,2,3,4,5,6,7,10,11,13,14,22,23,28,29};  // nodeposisjoner
+        String[] verdi = "EIBGAHKLODNMCJF".split("");              // verdier i nivåorden
 
-        String[] verdi = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15".split("");
+        BinTre<String> tre = new BinTre<>(posisjon, verdi);        // en konstruktør
 
-        BinTre<String> tre = new BinTre<>(posisjon, verdi);  // den nye konstruktøren
+        int[] nivåer = tre.nivåer();  // bruker Programkode 5.1.6 k)
 
+        System.out.print("Nivåer: " + Arrays.toString(nivåer));
+        System.out.print(" Treets bredde: " + nivåer[Tabell.maks(nivåer)]);
+        System.out.println(" Treets høyde: " + (nivåer.length - 1));
 
 
     }
+
+
 
     public static <T> void sorter(Kø<T> kø, Stakk<T> stakk, Comparator<T> c){
         int n = kø.antall();
