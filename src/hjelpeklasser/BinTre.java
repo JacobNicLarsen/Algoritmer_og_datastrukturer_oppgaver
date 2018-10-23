@@ -2,6 +2,7 @@ package hjelpeklasser;
 
 import java.util.Arrays;
 import java.util.NoSuchElementException;
+import java.util.Random;
 import java.util.StringJoiner;
 import java.util.function.Consumer;
 import java.util.function.ObjIntConsumer;
@@ -203,11 +204,12 @@ public class BinTre<T>           // et generisk binærtre
 
     private static <T> void preorden(Node<T> p, Oppgave<? super T> oppgave)
     {
-        if (p != null) {
+        while (true) {
             oppgave.utførOppgave(p.verdi);                       // utfører oppgaven
 
             if (p.venstre != null) preorden(p.venstre, oppgave);  // til venstre barn
-            if (p.høyre != null) preorden(p.høyre, oppgave);      // til høyre barn
+            if (p.høyre == null) return;      // metodekallet er ferdig
+            p = p.høyre;
         }
     }
 
@@ -220,9 +222,13 @@ public class BinTre<T>           // et generisk binærtre
 
     private static <T> void inorden(Node<T> p, Oppgave<? super T> oppgave)
     {
-        if (p.venstre != null) inorden(p.venstre,oppgave);
-        oppgave.utførOppgave(p.verdi);
-        if (p.høyre != null) inorden(p.høyre,oppgave);
+        while (true) {
+            if (p.venstre != null) inorden(p.venstre, oppgave);
+            oppgave.utførOppgave(p.verdi);
+            if (p.høyre == null) return;      // metodekallet er ferdig
+            p = p.høyre;
+        }
+
     }
 
     public void inorden(Oppgave <? super T> oppgave)
@@ -241,6 +247,7 @@ public class BinTre<T>           // et generisk binærtre
     {
         if (!tom()) postorden(rot,oppgave);
     }
+
 
     private void nullstill(Node<T> p){
         if (p.venstre != null) {
@@ -305,6 +312,31 @@ public class BinTre<T>           // et generisk binærtre
         tre.rot = trePreorden(preorden, 0, inorden, 0, inorden.length - 1);
 
         tre.antall = preorden.length;
+        return tre;
+    }
+
+    private static <T> Node<T> random(int n, Random r)
+    {
+        if (n == 0) return null;                      // et tomt tre
+        else if (n == 1) return new Node<>(null);     // tre med kun en node
+
+        int k = r.nextInt(n);    // k velges tilfeldig fra [0,n>
+
+        Node<T> venstre = random(k,r);     // tilfeldig tre med k noder
+        Node<T> høyre = random(n-k-1,r);   // tilfeldig tre med n-k-1 noder
+
+        return new Node<>(null,venstre,høyre);
+    }
+
+    public static <T> BinTre<T> random(int n)
+    {
+        if (n < 0) throw new IllegalArgumentException("Må ha n >= 0!");
+
+        BinTre<T> tre = new BinTre<>();
+        tre.antall = n;
+
+        tre.rot = random(n,new Random());   // kaller den private metoden
+
         return tre;
     }
 

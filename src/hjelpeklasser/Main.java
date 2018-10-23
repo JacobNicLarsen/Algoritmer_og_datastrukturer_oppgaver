@@ -27,10 +27,10 @@ public class Main {
         BinTre<String> tre = new BinTre<>(posisjon, verdi);        // en konstruktør
 
         StringJoiner s = new StringJoiner(", " ,"[", "]");         // StringJoiner
-        tre.postorden(s::add);                         // tegn = String
+        tre.preorden(s::add);                         // tegn = String
 
         System.out.println(s);
-        // Utskrift: [E, I, G, A, L, O, M, C, B, H, D, K, N, J, F]
+
 
     }
 
