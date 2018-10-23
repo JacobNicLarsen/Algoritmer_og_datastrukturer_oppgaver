@@ -4,8 +4,6 @@ import java.util.Arrays;
 import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.StringJoiner;
-import java.util.function.Consumer;
-import java.util.function.ObjIntConsumer;
 
 public class BinTre<T>           // et generisk binærtre
 {
@@ -220,6 +218,35 @@ public class BinTre<T>           // et generisk binærtre
         if (!tom()) preorden(rot,oppgave);  // sjekker om treet er tomt
     }
 
+    public void preordenItrativ(Oppgave<? super T> oppgave)   // ny versjon
+    {
+        if (tom()) return;
+
+        Stakk<Node<T>> stakk = new TabellStakk<>();
+        Node<T> p = rot;    // starter i roten
+
+        while (true)
+        {
+            oppgave.utførOppgave(p.verdi);
+
+            if (p.venstre != null)
+            {
+                if (p.høyre != null) stakk.leggInn(p.høyre);
+                p = p.venstre;
+            }
+            else if (p.høyre != null)  // her er p.venstre lik null
+            {
+                p = p.høyre;
+            }
+            else if (!stakk.tom())     // her er p en bladnode
+            {
+                p = stakk.taUt();
+            }
+            else                       // p er en bladnode og stakken er tom
+                break;                   // traverseringen er ferdig
+        }
+    }
+
     private static <T> void inorden(Node<T> p, Oppgave<? super T> oppgave)
     {
         while (true) {
@@ -236,6 +263,34 @@ public class BinTre<T>           // et generisk binærtre
         if (!tom()) inorden(rot,oppgave);
     }
 
+    public void inordenItrativ(Oppgave<? super T> oppgave)  // iterativ inorden
+    {
+        if (tom()) return;            // tomt tre
+
+        Stakk<Node<T>> stakk = new TabellStakk<>();
+        Node<T> p = rot;   // starter i roten og går til venstre
+        for ( ; p.venstre != null; p = p.venstre) stakk.leggInn(p);
+
+        while (true)
+        {
+            oppgave.utførOppgave(p.verdi);      // oppgaven utføres
+
+            if (p.høyre != null)          // til venstre i høyre subtre
+            {
+                for (p = p.høyre; p.venstre != null; p = p.venstre)
+                {
+                    stakk.leggInn(p);
+                }
+            }
+            else if (!stakk.tom())
+            {
+                p = stakk.taUt();   // p.høyre == null, henter fra stakken
+            }
+            else break;          // stakken er tom - vi er ferdig
+
+        } // while
+    }
+
     private static <T> void postorden(Node<T> p, Oppgave<? super T> oppgave)
     {
         if (p.venstre != null) postorden(p.venstre,oppgave);
@@ -247,6 +302,31 @@ public class BinTre<T>           // et generisk binærtre
     {
         if (!tom()) postorden(rot,oppgave);
     }
+
+    public void postordenItrativ(Oppgave<? super T> oppgave){
+        Stakk<Node> stack = new TabellStakk<>();
+        while(true) {
+            while(rot != null) {
+                stack.leggInn(rot);
+                stack.leggInn(rot);
+                rot = rot.venstre;
+            }
+
+            // Check for empty stack
+            if(stack.tom()) return;
+            rot = stack.taUt();
+
+            if(!stack.tom() && stack.kikk() == rot) rot = rot.høyre;
+
+            else {
+
+                System.out.print(rot.verdi + " "); rot = null;
+            }
+        }
+
+
+    }
+
 
 
     private void nullstill(Node<T> p){

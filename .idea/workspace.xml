@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86eacf30-5c3c-4536-8bdf-669a501b4217" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/hjelpeklasser/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/hjelpeklasser/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hjelpeklasser/BinTre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hjelpeklasser/BinTre.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hjelpeklasser/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hjelpeklasser/Main.java" afterDir="false" />
@@ -58,27 +57,27 @@
     <session id="-474117729">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="20" />
+          <entry key="project.closed" value="21" />
           <entry key="project.open.time.0" value="4" />
           <entry key="project.open.time.1" value="2" />
-          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="3" />
           <entry key="project.open.time.9" value="9" />
-          <entry key="project.opened" value="25" />
+          <entry key="project.opened" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="14609" />
+          <entry key="java" value="15104" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="14609" />
+          <entry key="JAVA" value="15104" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -98,8 +97,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+            <state relative-caret-position="205">
+              <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -107,17 +106,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/BinTre.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="249" selection-start-line="249" selection-end-line="249" />
+            <state relative-caret-position="409">
+              <caret line="318" column="68" lean-forward="true" selection-start-line="318" selection-start-column="68" selection-end-line="318" selection-end-column="68" />
               <folding>
-                <element signature="e#6906#6907#0" expanded="true" />
-                <element signature="e#6984#6985#0" expanded="true" />
-                <element signature="e#7509#7510#0" expanded="true" />
-                <element signature="e#7557#7558#0" expanded="true" />
-                <element signature="e#7866#7867#0" expanded="true" />
-                <element signature="e#7916#7917#0" expanded="true" />
-                <element signature="e#8226#8227#0" expanded="true" />
-                <element signature="e#8256#8257#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#7512#7513#0" expanded="true" />
+                <element signature="e#7560#7561#0" expanded="true" />
+                <element signature="e#7869#7870#0" expanded="true" />
+                <element signature="e#7919#7920#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -305,9 +301,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -336,12 +330,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540303806702" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540331601229" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../AlgDat_Oblig2" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -441,16 +437,17 @@
       <workItem from="1540204184825" duration="6390000" />
       <workItem from="1540214887442" duration="3356000" />
       <workItem from="1540289522352" duration="8615000" />
+      <workItem from="1540325151362" duration="4185000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205692000" />
+    <option name="totallyTimeSpent" value="209877000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29957357" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30277187" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -468,7 +465,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.28113878" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.28091106" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -563,6 +560,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Oppgave.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/EnkeltLenketListe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1377">
@@ -627,33 +631,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Oppgave.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+        <state relative-caret-position="205">
+          <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hjelpeklasser/BinTre.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="249" selection-start-line="249" selection-end-line="249" />
+        <state relative-caret-position="409">
+          <caret line="318" column="68" lean-forward="true" selection-start-line="318" selection-start-column="68" selection-end-line="318" selection-end-column="68" />
           <folding>
-            <element signature="e#6906#6907#0" expanded="true" />
-            <element signature="e#6984#6985#0" expanded="true" />
-            <element signature="e#7509#7510#0" expanded="true" />
-            <element signature="e#7557#7558#0" expanded="true" />
-            <element signature="e#7866#7867#0" expanded="true" />
-            <element signature="e#7916#7917#0" expanded="true" />
-            <element signature="e#8226#8227#0" expanded="true" />
-            <element signature="e#8256#8257#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#7512#7513#0" expanded="true" />
+            <element signature="e#7560#7561#0" expanded="true" />
+            <element signature="e#7869#7870#0" expanded="true" />
+            <element signature="e#7919#7920#0" expanded="true" />
           </folding>
         </state>
       </provider>
