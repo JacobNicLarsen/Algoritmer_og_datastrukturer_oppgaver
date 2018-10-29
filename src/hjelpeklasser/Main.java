@@ -22,13 +22,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int[] posisjon = {1,2,3,4,5,6,7,10,11,13,14,22,23,28,29};  // posisjoner og
-        String[] verdi = "NFMAEHLBDGKC23IJ".split("");              // verdier i nivåorden
-        BinTre<String> tre = new BinTre<>(posisjon, verdi);        // en konstruktør
+        int[] posisjon = {1,2,3,4,5,6,7,8,9,10};             // posisjoner og
+        String[] verdi = "ABCDEFGHIJ".split("");             // verdier i nivåorden
 
-        StringJoiner s = new StringJoiner(", " ,"[", "]");         // StringJoiner
-        tre.postordenItrativ(x -> {});
-        System.out.println(s);
+        BinTre<String> tre = new BinTre<>(posisjon, verdi);  // konstruktør
+
+
+
+
 
 
     }

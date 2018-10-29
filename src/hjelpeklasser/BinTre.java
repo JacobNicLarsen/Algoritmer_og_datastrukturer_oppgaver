@@ -1,12 +1,10 @@
 package hjelpeklasser;
 
-import java.util.Arrays;
-import java.util.NoSuchElementException;
-import java.util.Random;
-import java.util.StringJoiner;
+import java.util.*;
 
-public class BinTre<T>           // et generisk binærtre
+public class BinTre<T> implements Iterable<T>           // et generisk binærtre
 {
+
     private static final class Node<T>  // en indre nodeklasse
     {
         private T verdi;            // nodens verdi
@@ -24,8 +22,9 @@ public class BinTre<T>           // et generisk binærtre
 
     private Node<T> rot;      // referanse til rotnoden
     private int antall;       // antall noder i treet
+    private int enderinger;
 
-    public BinTre() { rot = null; antall = 0; }          // konstruktør
+    public BinTre() { rot = null; antall = 0; enderinger = 0; }          // konstruktør
 
     public BinTre(int[] posisjon, T[] verdi)  // konstruktør
     {
@@ -64,6 +63,7 @@ public class BinTre<T>           // et generisk binærtre
             q.høyre = p;                  // høyre barn til q
 
         antall++;                       // en ny verdi i treet
+        enderinger++;
     }
 
     public int antall() { return antall; }               // returnerer antallet
@@ -108,6 +108,8 @@ public class BinTre<T>           // et generisk binærtre
         T gammelverdi = p.verdi;
         p.verdi = nyverdi;
 
+        enderinger++;
+
         return gammelverdi;
     }
 
@@ -148,6 +150,7 @@ public class BinTre<T>           // et generisk binærtre
         else q.høyre = null;
 
         antall--;  //
+        enderinger ++;
         return p.verdi;
     }
 
@@ -418,6 +421,154 @@ public class BinTre<T>           // et generisk binærtre
         tre.rot = random(n,new Random());   // kaller den private metoden
 
         return tre;
+    }
+
+    public Iterator<T> iterator(){
+        return new InordenIterator();
+    }
+
+    public Iterator<T> omvendtordenIetrator(){
+        return new OmvendtordenIterator();
+    }
+
+    public Iterator<T> preordenIterator(){
+        return new PreordenIterator();
+    }
+
+    private class PreordenIterator implements Iterator<T>{
+        private  Stakk<Node<T>> stakk;
+        private Node<T> p;
+        private int iteratorendringer;
+
+        public PreordenIterator(){
+            if(tom()) return;
+            stakk = new TabellStakk<>();
+            p = første();
+            iteratorendringer = enderinger;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return p != null;
+        }
+
+        @Override
+        public T next()  // neste er med hensyn på preorden
+        {
+            if (!hasNext()) throw new NoSuchElementException();
+
+            if (iteratorendringer != enderinger)
+                throw new ConcurrentModificationException("Treet er endret");
+
+            T verdi = p.verdi;
+
+            if (p.venstre != null)                  // går til venstre
+            {
+                if (p.høyre != null) stakk.leggInn(p.høyre);
+                p = p.venstre;
+            }
+            else if (p.høyre != null) p = p.høyre;  // går til høyre
+            else if (stakk.tom()) p = null;             // ingen flere i treet
+            else p = stakk.taUt();                      // tar fra satkken
+
+            return verdi;
+        }
+
+
+        private Node<T> første(){
+            if(tom())
+                throw new IllegalStateException("Treet er tomt");
+            return rot;
+        }
+    }
+
+    private class OmvendtordenIterator implements Iterator<T>{
+        private Stakk<Node<T>> stakk;
+        private Node<T> p;
+        private int iteratorendringer;
+
+        public OmvendtordenIterator(){
+            stakk = new TabellStakk<>();
+            if (tom()) return;
+            p = siste(rot);
+            iteratorendringer = enderinger;
+        }
+
+        private Node<T> siste(Node<T> q){
+            while (q.høyre != null){
+                stakk.leggInn(q);
+                q = q.høyre;
+            }
+            return q;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return p != null;
+        }
+
+        public T next()
+        {
+            if (!hasNext()) throw new NoSuchElementException();
+
+            if (iteratorendringer != enderinger)
+                throw new ConcurrentModificationException("Treet er endret");
+
+            T verdi = p.verdi;               // tar vare på verdien i noden p
+
+            if (p.venstre != null)           // p har venstre subtre
+                p = siste(p.venstre);
+            else if (stakk.tom()) p = null;      // stakken er tom
+            else  p = stakk.taUt();              // tar fra stakken
+
+            return verdi;                    // returnerer verdien
+        }
+    }
+
+    private class InordenIterator implements Iterator<T>{
+
+        private Stakk<Node<T>> stakk;
+        private Node<T> p = null;
+        private int iteratorendringer;
+
+        private InordenIterator(){
+            if(tom()) return;
+            stakk = new TabellStakk<>();
+            p = først(rot);
+            iteratorendringer = enderinger;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return p != null;
+        }
+
+        @Override
+        public T next() {
+            if (!hasNext())
+                throw new NoSuchElementException("Inger verdier!");
+
+            if (iteratorendringer != enderinger)
+                throw new ConcurrentModificationException("Treet er endret");
+
+            T verdi = p.verdi;
+
+            if (p.høyre != null) p = først(p.høyre);
+            else if (stakk.tom()) p = null;
+            else p = stakk.taUt();
+
+            return verdi;
+        }
+
+        private Node<T> først(Node<T> q)   // en hjelpemetode
+        {
+            while (q.venstre != null)        // starter i q
+            {
+                stakk.leggInn(q);              // legger q på stakken
+                q = q.venstre;                 // går videre mot venstre
+            }
+            return q;                        // q er lengst ned til venstre
+        }
     }
 
 
