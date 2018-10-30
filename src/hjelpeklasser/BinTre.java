@@ -326,8 +326,6 @@ public class BinTre<T> implements Iterable<T>           // et generisk binærtre
                 System.out.print(rot.verdi + " "); rot = null;
             }
         }
-
-
     }
 
 
@@ -569,7 +567,104 @@ public class BinTre<T> implements Iterable<T>           // et generisk binærtre
             }
             return q;                        // q er lengst ned til venstre
         }
+
     }
 
+    private static int antall(Node<?> p)  // ? betyr vilkårlig type
+    {
+        if (p == null) return 0;            // et tomt tre har 0 noder
+
+        return 1 + antall(p.venstre) + antall(p.høyre);
+    }
+
+    public int antallRekusjon()
+    {
+        return antall(rot);                 // kaller hjelpemetoden
+    }
+
+    private static <T> int posisjon(Node<T> p, int k, T verdi)
+    {
+        if (p == null) return -1;                  // ligger ikke i et tomt tre
+        if (verdi.equals(p.verdi)) return k;       // verdi ligger i p
+        int i = posisjon(p.venstre,2*k,verdi);     // leter i venstre subtre
+        if (i > 0) return i;                       // ligger i venstre subtre
+        return posisjon(p.høyre,2*k+1,verdi);      // leter i høyre subtre
+    }
+
+    public int posisjon(T verdi)
+    {
+        return posisjon(rot,1,verdi);  // kaller den private metoden
+    }
+
+    private static <T> boolean inneholder(Node<T> p, T verdi)
+    {
+        if (p == null) return false;    // kan ikke ligge i et tomt tre
+        return verdi.equals(p.verdi) || inneholder(p.venstre,verdi)
+                || inneholder(p.høyre,verdi);
+    }
+
+    public boolean inneholder(T verdi)
+    {
+        return inneholder(rot,verdi);   // kaller den private metoden
+    }
+
+
+    private static void høyde(Node<?> p, int nivå, IntObject o)
+    {
+        if (nivå > o.get()) o.set(nivå);
+        if (p.venstre != null) høyde(p.venstre, nivå + 1, o);
+        if (p.høyre != null) høyde(p.høyre, nivå + 1, o);
+    }
+
+    public int høyde()
+    {
+        IntObject o = new IntObject(-1);
+        if (!tom()) høyde(rot, 0, o);
+        return o.get();
+    }
+
+    private static int høyde(Node<?> p, IntObject o)
+    {
+        if (p == null) return -1;                // et tomt tre har høyde -1
+        int h1 = høyde(p.venstre, o);            // høyden til venstre subtre
+        int h2 = høyde(p.høyre, o);              // høyden til høyre subtre
+        int avstand = h1 + h2 + 2;               // avstanden mellom to noder
+        if (avstand > o.get()) o.set(avstand);   // sammenligner/oppdaterer
+        return Math.max(h1, h2) + 1;             // høyden til treet med p som rot
+    }
+
+    public int diameter()
+    {
+        IntObject o = new IntObject(-1);         // lager et tallobjekt
+        høyde(rot, o);                           // traverserer
+        return o.get();                          // returnerer diameter
+    }
+
+    private static int antallBladnoder(Node<?> p)
+    {
+        if (p.venstre == null && p.høyre == null) return 1;
+
+        return (p.venstre == null ? 0 : antallBladnoder(p.venstre))
+                + (p.høyre == null ? 0 : antallBladnoder(p.høyre));
+    }
+
+    public int antallBladnoder()
+    {
+        return rot == null ? 0 : antallBladnoder(rot);
+    }
+
+    public int makspos()
+    {
+        IntObject o = new IntObject(-1);
+        if (!tom()) makspos(rot, 1, o);
+        return o.get();
+    }
+
+    private static void makspos(Node<?> p, int pos, IntObject o)
+    {
+        if (pos > o.get()) o.set(pos);
+        if (p.venstre != null) makspos(p.venstre, 2*pos, o);
+        if (p.høyre != null) makspos(p.høyre, 2*pos + 1, o);
+    }
 
 } // class BinTre<T>

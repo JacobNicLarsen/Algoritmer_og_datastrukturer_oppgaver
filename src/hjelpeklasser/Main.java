@@ -22,15 +22,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int[] posisjon = {1,2,3,4,5,6,7,8,9,10};             // posisjoner og
-        String[] verdi = "ABCDEFGHIJ".split("");             // verdier i nivåorden
-
-        BinTre<String> tre = new BinTre<>(posisjon, verdi);  // konstruktør
-
-
-
-
-
+        SBinTre<String> tre = SBinTre.balansert("ABCDDEFFGH".split(""));
+        System.out.println(tre.antall() + " " + tre.høyde() + " " + tre);
 
     }
 
