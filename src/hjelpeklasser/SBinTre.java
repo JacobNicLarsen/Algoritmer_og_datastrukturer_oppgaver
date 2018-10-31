@@ -311,6 +311,66 @@ public class SBinTre<T> // implements Beholder<T>
         return q == null ? false : comp.compare(verdi,q.verdi) == 0;
     }
 
+    public boolean fjern(T verdi)  // hører til klassen SBinTre
+    {
+        if (verdi == null) return false;  // treet har ingen nullverdier
+
+        Node<T> p = rot, q = null;   // q skal være forelder til p
+
+        while (p != null)            // leter etter verdi
+        {
+            int cmp = comp.compare(verdi,p.verdi);      // sammenligner
+            if (cmp < 0) { q = p; p = p.venstre; }      // går til venstre
+            else if (cmp > 0) { q = p; p = p.høyre; }   // går til høyre
+            else break;    // den søkte verdien ligger i p
+        }
+        if (p == null) return false;   // finner ikke verdi
+
+        if (p.venstre == null || p.høyre == null)  // Tilfelle 1) og 2)
+        {
+            Node<T> b = p.venstre != null ? p.venstre : p.høyre;  // b for barn
+            if (p == rot) rot = b;
+            else if (p == q.venstre) q.venstre = b;
+            else q.høyre = b;
+        }
+        else  // Tilfelle 3)
+        {
+            Node<T> s = p, r = p.høyre;   // finner neste i inorden
+            while (r.venstre != null)
+            {
+                s = r;    // s er forelder til r
+                r = r.venstre;
+            }
+
+            p.verdi = r.verdi;   // kopierer verdien i r til p
+
+            if (s != p) s.venstre = r.høyre;
+            else s.høyre = r.høyre;
+        }
+
+        antall--;   // det er nå én node mindre i treet
+        return true;
+    }
+
+    public void fjernMin()  // hører til klassen SBinTre
+    {
+        if (tom()) throw new NoSuchElementException("Treet er tomt!");
+
+        if (rot.venstre == null) rot = rot.høyre;  // rotverdien er minst
+        else
+        {
+            Node<T> p = rot.venstre, q = rot;
+            while (p.venstre != null)
+            {
+                q = p;  // q er forelder til p
+                p = p.venstre;
+            }
+            // p er noden med minst verdi
+            q.venstre = p.høyre;
+        }
+        antall--;  // det er nå én node mindre i treet
+    }
+
     private static int høyde(Node<?> p)  // ? betyr vilkårlig type
     {
         if (p == null) return -1;          // et tomt tre har høyde -1
