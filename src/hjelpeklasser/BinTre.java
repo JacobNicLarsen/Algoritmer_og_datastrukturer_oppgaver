@@ -623,6 +623,44 @@ public class BinTre<T> implements Iterable<T>           // et generisk binærtre
         return o.get();
     }
 
+    public boolean erMintre(Comparator<? super T> c) // legges i BinTre
+    {
+        if (rot == null) return true;    // et tomt tre er et minimumstre
+        else return erMintre(rot,c);     // kaller den private hjelpemetoden
+    }
+
+    private static <T> boolean erMintre(Node<T> p, Comparator<? super T> c)
+    {
+        if (p.venstre != null)
+        {
+            if (c.compare(p.venstre.verdi,p.verdi) < 0) return false;
+            if (!erMintre(p.venstre,c)) return false;
+        }
+        if (p.høyre != null)
+        {
+            if (c.compare(p.høyre.verdi,p.verdi) < 0) return false;
+            if (!erMintre(p.høyre,c)) return false;
+        }
+        return true;
+    }
+
+    public String minimumsGrenen(Comparator<? super T> c){
+        StringJoiner s = new StringJoiner(", ", "[", "]");
+        Node<T> p = rot;
+
+        while (p != null){
+            s.add(p.verdi.toString());
+            if (p.høyre == null) p = p.venstre;
+            else if (p.verdi == null) p = p.høyre;
+            else {
+                int cmp = c.compare(p.venstre.verdi, p.høyre.verdi);
+                p = cmp <= 0 ? p.venstre : p.høyre;
+            }
+        }
+        return s.toString();
+    }
+
+
     private static int høyde(Node<?> p, IntObject o)
     {
         if (p == null) return -1;                // et tomt tre har høyde -1
@@ -639,6 +677,7 @@ public class BinTre<T> implements Iterable<T>           // et generisk binærtre
         høyde(rot, o);                           // traverserer
         return o.get();                          // returnerer diameter
     }
+
 
     private static int antallBladnoder(Node<?> p)
     {
