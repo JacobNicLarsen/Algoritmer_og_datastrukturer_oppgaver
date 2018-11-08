@@ -1,6 +1,11 @@
 package hjelpeklasser;
 
-public class LenketHashTabell<T> // implements Beholder<T>
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.Objects;
+import java.util.StringJoiner;
+
+public class LenketHashTabell<T>  implements Beholder<T>
 {
     private static class Node<T>      // en indre nodeklasse
     {
@@ -21,9 +26,15 @@ public class LenketHashTabell<T> // implements Beholder<T>
     private int grense;               // eng: threshold (norsk: terskel)
     private int antall;               // antall verdier
 
+    @SuppressWarnings({"raw types", "unchecked"})
     public LenketHashTabell(int dimensjon)  // konstruktør
     {
-        // mangler kode
+        if (dimensjon < 0) throw new IllegalArgumentException("Negativ dimensjon!");
+
+        hash = new Node[dimensjon];                // bruker raw type
+        tetthet = 0.75f;                           // maksimalt 75% full
+        grense = (int)(tetthet * hash.length);     // gjør om til int
+        antall = 0;                                // foreløpig ingen verdier
     }
 
     public LenketHashTabell()  // standardkonstruktør
@@ -41,6 +52,124 @@ public class LenketHashTabell<T> // implements Beholder<T>
         return antall == 0;
     }
 
-    // flere metoder skal inn her
+    @Override
+    public void nullstill() {
+
+    }
+
+    public boolean leggInn(T verdi)
+    {
+        java.util.Objects.requireNonNull(verdi, "verdi er null!");
+
+        if (antall >= grense)
+        {
+            utvid();
+        }
+
+        int hashverdi = verdi.hashCode() & 0x7fffffff;  // fjerner fortegn
+        int indeks = hashverdi % hash.length;           // finner indeksen
+
+        // legger inn først i listen som hører til indeks
+        hash[indeks] = new Node<>(verdi, hashverdi, hash[indeks]);  // lagrer hashverdi
+
+        antall++;        // en ny verdi
+        return true;     // vellykket innlegging
+    }
+
+    @Override
+    public boolean inneholder(T verdi) {
+        return false;
+    }
+
+    @Override
+    public boolean fjern(T verdi) {
+        return false;
+    }
+
+    @Override
+    public String toString()
+    {
+        StringJoiner s = new StringJoiner(", ", "[", "]");
+
+        for (Node<T> p : hash)              // går gjennom tabellen
+        {
+            for (; p != null; p = p.neste)    // går gjennom listen
+            {
+                s.add(p.verdi.toString());
+            }
+        }
+        return s.toString();
+    }
+
+
+    private void utvid()                               // hører til LenketHashTabell
+    {
+        @SuppressWarnings({"rawtypes","unchecked"}) // bruker raw types
+        Node<T>[] nyhash = new Node[2*hash.length + 1];  // dobling + 1
+
+        for (int i = 0; i < hash.length; i++)            // den gamle tabellen
+        {
+            Node<T> p = hash[i];                           // listen til hash[i]
+
+            while (p != null)                              // går nedover
+            {
+                Node<T> q = p.neste;                         // hjelpevariabel
+                int nyindeks = p.hashverdi % nyhash.length;  // indeks i ny tabell
+
+                p.neste = nyhash[nyindeks];                  // p skal legges først
+
+                nyhash[nyindeks] = p;
+                p = q;                                       // flytter p til den neste
+            }
+
+            hash[i] = null;                                // nuller i den gamle
+        }
+
+        hash = nyhash;                                   // bytter tabell
+        grense = (int)(tetthet * hash.length);           // ny grense
+    }
+
+    public Iterator<T> iterator()
+    {
+        return new HashTabellIterator();
+    }
+
+    private class HashTabellIterator implements Iterator<T>
+    {
+        private int indeks = 0;
+        private Node<T> p = null;
+
+        private HashTabellIterator()
+        {
+            while (indeks < hash.length && hash[indeks] == null) indeks++;
+            p = indeks < hash.length ? hash[indeks] : null;
+        }
+
+        public boolean hasNext()
+        {
+            return p != null;
+        }
+
+        public T next()
+        {
+            if (!hasNext())
+                throw new NoSuchElementException("Ingen flere verdier");
+
+            T verdi = p.verdi;                  // tar vare på verdien
+
+            if (p.neste != null)
+            {
+                p = p.neste;   // hvis p ikke er den siste
+            }
+            else  // må gå til neste indeks der hash[indeks] er ulik null
+            {
+                while (++indeks < hash.length && hash[indeks] == null);
+                p = indeks < hash.length ? hash[indeks] : null;
+            }
+            return verdi;                       // returnerer verdien
+        }
+
+    } // class HashTabellIterator
+    
 
 }  // class LenketHashTabell

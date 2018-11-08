@@ -22,28 +22,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int n = 193;
-        int[] hash = new int[n];
 
-        for (int i = 0; i < 400; i++) {
-            String s = "A";
-            if (i < 100) s += 0;
-            if (i < 10) s += 0;
-            s += i;
-            hash[elfhash(s) % n]++;
-        }
+        int[] tab = {1,2,3,4,5,5,6,7,8,9,10};
+        LenketHashTabell s = new LenketHashTabell();
 
-        int maksindeks = Tabell.maks(hash);
-        int maksverdi = hash[maksindeks];
-        
-        int[] frekvens = new int[maksverdi + 1];
-        for (int i = 0; i < hash.length; i++)frekvens[hash[i]]++;
+        System.out.println(s.grense);
+        for (int i : tab) s.leggInn(i);
+        System.out.println(s.toString() + " " + s.grense);
 
-        int i = Integer.remainderUnsigned(-1, 3);
-        System.out.println(i);
 
-        int h = hash("ABC", 10, 3.14);
-        System.out.println(h);
 
     }
 
