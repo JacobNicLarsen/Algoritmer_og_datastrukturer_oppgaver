@@ -22,17 +22,25 @@ public class Main {
 
     public static void main(String[] args) {
 
-
-        int[] tab = {1,2,3,4,5,5,6,7,8,9,10};
-        LenketHashTabell s = new LenketHashTabell();
-
-        System.out.println(s.grense);
-        for (int i : tab) s.leggInn(i);
-        System.out.println(s.toString() + " " + s.grense);
+        String[] navn = {"Olga","Basir","Ali","Per","Elin","Siri",
+                "Ole","Mette","Anne","Åse","Leif","Mona","Lise"};
 
 
+        LenketHashTabell<String> hashtabell = new LenketHashTabell<>(11);
+
+        for (String n : navn)
+        {
+            hashtabell.leggInn(n);
+            System.out.println(hashtabell);
+        }
+
+        hashtabell.nullstill();
+        System.out.println(hashtabell);
 
     }
+
+
+
 
     public static int elfhash(String s)
     {

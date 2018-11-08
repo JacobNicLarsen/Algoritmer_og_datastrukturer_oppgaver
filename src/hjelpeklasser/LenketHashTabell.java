@@ -54,7 +54,11 @@ public class LenketHashTabell<T>  implements Beholder<T>
 
     @Override
     public void nullstill() {
-
+        if (antall > 0)
+        {
+            antall = 0;
+            for (int i = 0; i < hash.length; i++) hash[i] = null;
+        }
     }
 
     public boolean leggInn(T verdi)
@@ -78,12 +82,41 @@ public class LenketHashTabell<T>  implements Beholder<T>
 
     @Override
     public boolean inneholder(T verdi) {
+
+        if (verdi == null) return false;
+
+        int hashverdi = verdi.hashCode() & 0x7fffffff;
+        int indeks = hashverdi % hash.length;
+
+        Node<T> p = hash[indeks];
+
+        while (p != null){
+            if (verdi.equals(p.verdi)) return true;
+            p = p.neste;
+        }
+
         return false;
     }
 
     @Override
     public boolean fjern(T verdi) {
-        return false;
+
+        int hashverdi = verdi.hashCode() & 0x7fffffff;
+        int indeks = hashverdi % hash.length;
+
+        Node<T> p = hash[indeks], q = null;
+
+        while (p != null){
+            if (verdi.equals(p.verdi)) break;
+            q = p; p = p.neste;
+        }
+
+        if (p == null) return false;
+        else if (p == hash[indeks]) hash[indeks] = p.neste;
+        else q.neste = p.neste;
+
+        antall --;
+        return true;
     }
 
     @Override
@@ -138,6 +171,7 @@ public class LenketHashTabell<T>  implements Beholder<T>
     {
         private int indeks = 0;
         private Node<T> p = null;
+        private Boolean fjernOK = false;
 
         private HashTabellIterator()
         {
@@ -166,6 +200,7 @@ public class LenketHashTabell<T>  implements Beholder<T>
                 while (++indeks < hash.length && hash[indeks] == null);
                 p = indeks < hash.length ? hash[indeks] : null;
             }
+            fjernOK = true;
             return verdi;                       // returnerer verdien
         }
 
